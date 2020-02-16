@@ -1,7 +1,7 @@
 create database GymApp;
 
 create table userInfo(
-	user_id int primary key AUTO_INCREMENT=1000,
+	user_id int primary key unique,
 	f_name varchar(20) not null,
 	l_name varchar(20) not null,
 	email varchar(50)not null,
@@ -12,25 +12,20 @@ create table userInfo(
 	gender varchar(6)
 	);
 
-create table excersize(
-	excersize_id int primary key AUTO_INCREMENT=2000,
-	excersize_name char(20) not null,
-	);
-
-create table user_workout(
-	workout_id int primary key AUTO_INCREMENT=3000,
-	excersize_id int references excersize(excersize_id)
-	);
-
 create table workout(
 	user_id int references userInfo(user_id),
-	workout_id int primary key references user_workout(workout_id)
+	workout_id int primary key unique
 	workout_name varchar(10)
 	);
 
 create table workout_record(
-	session_id int primary key AUTO_INCREMENT=4000,
+	session_id int primary key unique,
 	session_date date not null,
 	workout_id int references user_workout(workout_id),
+	push_ups int,
+	pull_ups int,
+	sit_ups int,
+	chest_press int,
+	bicep_curl int,
 	
 	);
