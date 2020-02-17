@@ -5,3 +5,11 @@
 - [ ] Server
 - [ ] Login Page
 - [ ] New User Form
+- [ ] View User Profile
+- [ ] New Workout
+- [ ] View Workout
+- [ ] Edit / Delete Workout
+- [ ] Link to Database
+- [ ] CSS
+- [ ] Edit User Profile
+- [ ] SQL  
