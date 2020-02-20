@@ -1,0 +1,37 @@
+<h!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Workouts</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <form class="" action="index.html" method="post" style="border:1px solid #ccc">
+      <div class="container">
+        <h1>Create Workouts</h1>
+         <p>You can Create,Delete and Update Workouts</p>
+         <hr>
+    <label for="wr-select"><strong>Workouts:</strong></label>
+    <hr />
+    <div class="custom-select" style="width:200px;">
+    <select multiple name="" id="wrk" required>
+  <option value=""><strong>Please choose one or more</strong></option>
+  <option value="push">push-ups</option>
+  <option value="pull">pull-ups</option>
+  <option value="sit">sit-ups</option>
+  <option value="chest">chest-press</option>
+  <option value="bicep">bicep-curl</option>
+
+</select>
+
+<hr />
+<div class="addRemove">
+        <button class= type="button" class="delbutton">Delete</button>
+        <button type="submit" class="enterbtn">Add</button>
+      </div>
+      <h2>New workouts</h2>
+<label for="w_name"><strong>New Workout Name</strong></label>
+      <input type="text" placeholder="Enter name" name="wname" required>
+<button type="submit" class="enterbtn">Enter</button>
+  </body>
+</html>

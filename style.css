@@ -6,7 +6,15 @@ body {
   padding: 0;
   width: 100%;
 }
+/*hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}*/
+  hr {
+  border: 10px solid #ffffff;
+  border-radius: 5px;
 
+}
 .row {
   display: table-row;
   height: 50%;
@@ -21,13 +29,41 @@ body {
 }
 
 .fullwidth {
-	width: 100%
+	width: 100%;
 	margin: 0;
 	display: block;
 	text-align: center;
 }
+label {
+/* Uniform size & alignment */
+display: inline-block;
+width: 100%;
+text-align: left;
+}
+/*
 
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border: 1px solid #CCC;
 
+}*/
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.delbutton {
+  background-color: #f44336;
+  } /* Red */
+  /*background-colsor: red; */
+  body{background-color: powderblue;}
+  h1   {color: blue;}
+  p    {color: red;}
 /*button {
 	display: block;
 	width: 100%;
