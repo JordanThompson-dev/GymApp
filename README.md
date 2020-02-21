@@ -7,7 +7,7 @@
 - [ ] New User Form
 - [ ] View User Profile
 - [x] New Workout
-- [ ] View Workout
+- [ ] Do Workout
 - [ ] Edit / Delete Workout
 - [ ] Link to Database
 - [ ] CSS
