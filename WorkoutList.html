@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
  <head>
+   <script src="Filter.js"></script>
    <title>E-Commerce website</title>
    <link rel="stylesheet" type="text/css" href="style1.css">
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
@@ -27,11 +28,20 @@
     </div>
   </div>
   <div class="container">
-    <h2>Workouts</h2>
+    <div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('arms')"> Arms</button>
+  <button class="btn" onclick="filterSelection('abs')"> Abs</button>
+  <button class="btn" onclick="filterSelection('chest')"> Chest</button>
+  <button class="btn" onclick="filterSelection('shoulders')"> Shoulders</button>
+  <button class="btn" onclick="filterSelection('legs')"> Legs</button>
+  <button class="btn" onclick="filterSelection('other')">Other</button>
+</div>
 	    <div class="row">
+        <div class="filterDiv chest">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/t1.jpg">
+				<img src="img/costa.png">
 				<div class="overlay">
 
 
@@ -50,9 +60,11 @@
 				</div>
 
 			</div>
+    </div>
+      <div class="filterDiv chest">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/t2.jpg">
+				<img src="img/costa.png">
 				<div class="overlay">
 
 
@@ -71,9 +83,11 @@
 				</div>
 
 			</div>
+    </div>
+    <div class="filterDiv arms">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/t3.jpg">
+				<img src="img/costa.png">
 				<div class="overlay">
 
 
@@ -92,9 +106,11 @@
 				</div>
 
 			</div>
+    </div>
+    <div class="filterDiv arms">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/t4.jpg">
+				<img src="img/costa.png">
 				<div class="overlay">
 
 
@@ -113,9 +129,11 @@
 				</div>
 
 			</div>
+    </div>
+    <div class="filterDiv shoulders">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/t5.jpg">
+				<img src="img/costa.png">
 				<div class="overlay">
 
 
@@ -134,9 +152,11 @@
 				</div>
 
 			</div>
+    </div>
+    <div class="filterDiv shoulders">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/t6.jpg">
+				<img src="img/costa.png">
 				<div class="overlay">
 
 
@@ -153,11 +173,13 @@
 				    <h3>Fly Lift</h3>
 					<h5>Shoulders</h5>
 				</div>
+      </div>
 
 			</div>
+      <div class="filterDiv legs">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/t7.jpg">
+				<img src="img/costa.png">
 				<div class="overlay">
 
 
@@ -176,9 +198,11 @@
 				</div>
 
 			</div>
+    </div>
+    <div class="filterDiv legs">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/t8.jpg">
+				<img src="img/costa.png">
 				<div class="overlay">
 
 
@@ -195,11 +219,13 @@
 				    <h3>Random Move</h3>
 					<h5>Legs</h5>
 				</div>
+      </div>
 
 			</div>
+      <div class="filterDiv abs">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/t9.jpg">
+				<img src="img/costa.png">
 				<div class="overlay">
 
 
@@ -216,11 +242,13 @@
 				    <h3>Crunches</h3>
 					<h5>Abs</h5>
 				</div>
+      </div>
 
 			</div>
+      <div class="filterDiv abs">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/t10.jpg">
+				<img src="img/costa.png">
 				<div class="overlay">
 
 
@@ -238,9 +266,11 @@
 					<h5>Abs</h5>
 				</div>
 			</div>
+    </div>
+    <div class="filterDiv other">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/t11.jpg">
+				<img src="img/costa.png">
 				<div class="overlay">
 
 
@@ -255,12 +285,14 @@
 
 
 				    <h3>Random Move</h3>
-					<h5>Abdominal </h5>
+					<h5>Other </h5>
 				</div>
 			</div>
+    </div>
+      <div class="filterDiv other">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/t12.jpg">
+				<img src="img/costa.png">
 				<div class="overlay">
 
 
@@ -275,29 +307,10 @@
 
 
 				    <h3>Random Move</h3>
-					<h5>Abdominal </h5>
+					<h5>Other </h5>
 				</div>
 			</div>
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/t13.jpg">
-				<div class="overlay">
-
-
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Random Move</h3>
-					<h5>Abdominal </h5>
-				</div>
-			</div>
+    </div>
 		</div>
 	</div>
   </body>
