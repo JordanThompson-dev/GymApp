@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>New User</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <form>
+
+      <div class="form-group">
+          <label for="firstNameField">Your First Name: </label>
+          <input type="text" class="form-control" id="firstNameField">
+        </div>
+
+      <div class="form-group">
+          <label for="lastNameField">Your Last Name: </label>
+          <input type="text" class="form-control" id="lastNameField">
+        </div>
+
+
+      <div class="form-group">
+          <label for="emailField">Your E-mail: </label>
+          <input type="text" class="form-control" id="emailField">
+        </div>
+
+
+      <div class="form-group">
+          <label for="pinField">Enter Pin: </label>
+          <input type="text" class="form-control" id="pinField">
+        </div>
+
+
+      <div class="form-group">
+          <label for="weightField">Enter Weight (kg): </label>
+          <input type="text" class="form-control" id="weightField">
+        </div>
+
+
+      <div class="form-group">
+          <label for="heightField">Enter Height (cm): </label>
+          <input type="text" class="form-control" id="heightField">
+        </div>
+
+
+      <div class="form-group">
+          <label for="dateOfBirthField">Date Of Birth: </label>
+          <input type="text" class="form-control" id="dateOfBirthField">
+        </div>
+
+      <a class="btn btn-default" onclick="submitOrder()">Submit Form</a>
+
+    </form>
+
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+
+  <script>
+
+    //info for connecting to firebase database
+    
+        var firebaseConfig = {
+    apiKey: "AIzaSyD7dq4bh88ZTL7-k3z2kj3cXwMlr3XgAC4",
+    authDomain: "gymapp-5fbe5.firebaseapp.com",
+    databaseURL: "https://gymapp-5fbe5.firebaseio.com",
+    projectId: "gymapp-5fbe5",
+    storageBucket: "gymapp-5fbe5.appspot.com",
+    messagingSenderId: "50631981290",
+    appId: "1:50631981290:web:dc3e83f3d883c7e1317f93",
+    measurementId: "G-CLFVBS5DM8"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+    var database = firebase.database();
+
+    //create a variable to hold our orders list from firebase
+    var firebaseOrdersCollection = database.ref().child('orders');
+
+    //this function is called when the submit button is clicked
+    function submitOrder() {
+
+      //Grab order data from the form
+      var order = {
+        firstName: $('#firstNameField').val(), //another way you could write is $('#myForm [name="fullname"]').
+        lastName: $('#lastNameField').val(), 
+        email: $('#emailField').val(), 
+        pin: $('pinField').val(),
+        weight: $('weightField').val(),
+        height: $('heightField').val(),
+        dob: $('dateOfBirthField').val(),
+      };
+      
+      //'push' (aka add) your order to the existing list
+      firebaseOrdersCollection.push(order); //'orders' is the name of the 'collection' (aka database table)
+      
+    };
+
+    //create a 'listener' which waits for changes to the values inside the firebaseOrdersCollection 
+    firebaseOrdersCollection.on('value',function(orders){
+      
+      //create an empty string that will hold our new HTML
+      var allOrdersHtml = "";
+      
+      //this is saying foreach order do the following function...
+      orders.forEach(function(firebaseOrderReference){
+        
+        //this gets the actual data (JSON) for the order.
+        var order = firebaseOrderReference.val();
+        console.log(order); //check your console to see it!
+        
+        //create html for the individual order
+        //note: this is hard to make look pretty! Be sure to keep your indents nice :-)
+        //IMPORTANT: we use ` here instead of ' (notice the difference?) That allows us to use enters
+        var individialOrderHtml = `<div class='item'>
+                        <p>Name: `+order.fullName+`</p>
+                        <p>Notes: `+order.notes+`</p>
+                      </div>`;
+        
+        //add the individual order html to the end of the allOrdersHtml list
+        allOrdersHtml = allOrdersHtml + individialOrderHtml;
+      });
+      
+      //actaull put the html on the page inside the element with the id PreviousOrders
+      $('#previousOrders').html(allOrdersHtml);
+      
+      //note: an alternative approach would be to create a hidden html element for one order on the page, duplicate it in the forEach loop, unhide it, and replace the information, and add it back. 
+    });
+
+  </script>
+
+</body>
+
+</html>

@@ -6,10 +6,11 @@
 - [ ] Login Page
 - [ ] New User Form
 - [ ] View User Profile
-- [ ] New Workout
-- [ ] View Workout
+- [x] New Workout
+- [ ] Do Workout
 - [ ] Edit / Delete Workout
 - [ ] Link to Database
 - [ ] CSS
 - [ ] Edit User Profile
 - [ ] SQL  
+- [ ] Home Page
