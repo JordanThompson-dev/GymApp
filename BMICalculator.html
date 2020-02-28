@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BMI Calculator</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+<h1> BMI Calculator</h1> <br/><br/>
+Height in CM
+<input type="text" id="cm"  placeholder = " height"> <br/>
+Weight in KG
+<input type="text" id="kg" placeholder = "weight"> <br/>
+<input type="submit" id="submit" value="calculate"> <br/><br/>
+Under Weight = Less than 18.6<br/>
+<hr />
+Normal Range = 18.6 and 24.9<br/>
+<hr />
+Overweight = Greater than 24.9<br/>
+<div id="result"></div>
+
+<script>
+document.getElementById("submit").addEventListener("click", bmiCalculator);
+function bmiCalculator(){//this function get height and weight from user input and calculate BMI
+let cm = parseInt(document.getElementById("cm").value);
+let kg = parseFloat(document.getElementById("kg").value);
+
+let bmi;
+let newCm= parseFloat(cm/100);
+
+bmi = kg / (newCm * newCm);
+bmi = bmi.toFixed(2);//Convert a number into a string, keeping only two decimals
+console.log(bmi);
+
+
+document.getElementById("result").innerHTML = "<h1>Your BMI is</h1> " + bmi;
+
+}
+</script>
+</body>
+</html>
