@@ -9,6 +9,35 @@
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBTYONg80kEBXm9TuvNW6UCATC4YCmkbsE",
+    authDomain: "addworkout-27c18.firebaseapp.com",
+    databaseURL: "https://addworkout-27c18.firebaseio.com",
+    projectId: "addworkout-27c18",
+    storageBucket: "addworkout-27c18.appspot.com",
+    messagingSenderId: "602359441095",
+    appId: "1:602359441095:web:39bc6ec0b336ebe84dc0e2",
+    measurementId: "G-97BFWRJ12R"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  function writeData(){
+    firebase.database().ref("user").set({
+      name: document.getElementByClassName("btn").value
+    });
+  }
+</script>
  </head>
  <body>
    <div class="top-nav-bar">

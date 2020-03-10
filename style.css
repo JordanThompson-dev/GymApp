@@ -12,7 +12,11 @@ body {
 }*/
 #result{
   padding: 20px;
-  
+
+}
+.dark-mode {
+  background-color: black;
+  color: white;
 }
   hr {
 
