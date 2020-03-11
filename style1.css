@@ -63,7 +63,7 @@ fa-search{
   list-style-type: none;
   padding: 15px 35px;
   text-align: center;
-  background-color: #4EAFD0;
+  background-color: #3FA9FF;
   cursor: pointer;
 }
 .menu-bar ul li a{
@@ -214,6 +214,7 @@ margin-right: 5px;
 
 /* The "show" class is added to the filtered elements */
 .show {
+  overflow: hidden;
   display: block;
 }
 
@@ -235,4 +236,10 @@ margin-right: 5px;
 .btn.active {
   background-color: #666;
   color: white;
+}
+
+.graph{
+  max-width: 80%;
+
+
 }
