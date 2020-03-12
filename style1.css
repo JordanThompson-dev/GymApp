@@ -7,10 +7,10 @@ body{
   font-family: sans-serif;
 }
 .top-nav-bar{
+  background-color: #3FA9FF;
   height: 57px;
   top: 0;
   position: sticky;
-  background: #fff;
   margin-bottom: 20px;
   border-bottom: 3px solid #4EAFD0;
   z-index: 2;
@@ -40,6 +40,7 @@ body{
   cursor: pointer;
 }
 .search-box{
+
   display: inline-flex;
   width: 60%;
   margin-left: 0%;
@@ -51,18 +52,18 @@ fa-search{
 .menu-bar{
   width: 40%;
   height: 57px;
-  float: right;
+  float: left;
 }
 .menu-bar ul{
   display: inline-flex;
-  float: right;
+  float: left;
 }
 .menu-bar ul li{
   border-left: 1px solid #fff;
   list-style-type: none;
   padding: 15px 35px;
   text-align: center;
-  background-color: #4EAFD0;
+  background-color: #3FA9FF;
   cursor: pointer;
 }
 .menu-bar ul li a{
@@ -213,6 +214,7 @@ margin-right: 5px;
 
 /* The "show" class is added to the filtered elements */
 .show {
+  overflow: hidden;
   display: block;
 }
 
@@ -234,4 +236,10 @@ margin-right: 5px;
 .btn.active {
   background-color: #666;
   color: white;
+}
+
+.graph{
+  max-width: 80%;
+
+
 }
