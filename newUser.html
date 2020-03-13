@@ -120,9 +120,13 @@
       console.log("Error creating user:", error)
     });
 
-    console.log(user);
-
     firebaseUsersCollection.push(user);
+
+    firebase.auth().onAuthStateChanged(user => {
+    if(user) {
+      window.location = 'loginPage.html';
+      }
+    })
 
   };
 
@@ -133,7 +137,6 @@
     users.forEach(function(firebaseUserReference){
 
     var user = firebaseUserReference.val();
-    console.log(user);
 
     var individualUserHtml = `<div class='item'>
                   <p>First Name: `+user.firstName+`</p>

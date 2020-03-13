@@ -34,4 +34,10 @@ firebase
   })
   .catch(function(error){
     console.log("Login Failed!", error);
-  })}};
+  })
+  firebase.auth().onAuthStateChanged(user => {
+  if(user) {
+    window.location = 'home.html';
+  }
+})
+}};
