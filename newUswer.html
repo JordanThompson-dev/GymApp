@@ -111,6 +111,15 @@
       dob: $('#dateOfBirthField').val(),
     };
 
+    firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
+    .then(function(user){
+      console.log("Successbully created user account with uid:",
+        user.uid);
+    })
+    .catch(function(error){
+      console.log("Error creating user:", error)
+    });
+
     console.log(user);
 
     firebaseUsersCollection.push(user);
