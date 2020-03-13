@@ -6,6 +6,10 @@ body{
   background-color: #f1f3f4;
   font-family: sans-serif;
 }
+.menu-bar :hover{
+  background-color: #3da3f5;
+
+}
 .top-nav-bar{
   background-color: #3FA9FF;
   height: 57px;

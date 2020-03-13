@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
+  url("gym.jpg");
 }
 /*hr {
   border: 1px solid #f1f1f1;
@@ -13,10 +14,6 @@ body {
 #result{
   padding: 20px;
 
-}
-.dark-mode {
-  background-color: black;
-  color: white;
 }
   hr {
 
