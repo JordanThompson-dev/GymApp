@@ -25,6 +25,36 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  var database = firebase.database();
+
+  var firebaseUserProgress =database.ref().child('progress')
+
+  function submitProgress() {
+
+    var progress = {
+      sitUp: $('#sitUpField').val(),
+      pressUps: $('#pressUpField').val(),
+      weight: $('#weightField').val(),
+    }
+
+    console.log(progress);
+    firebaseUserProgress.push(progress);
+  };
+
+  firebaseUserProgress.on('value',function(prog){
+
+    var allProgressHtml = "";
+
+    prog.forEach(function(firebaseProgressReference){
+
+      var progress = firebaseProgressReference.val();
+      console.log(progress);
+
+      
+
+    });
+
+  })
   firebase.analytics();
 </script>
 
