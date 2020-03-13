@@ -3,6 +3,9 @@
 
 <head>
   <title> Progress tracker </title>
+  <link rel="stylesheet" type="text/css" href="style1.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
@@ -50,18 +53,38 @@
       var progress = firebaseProgressReference.val();
       console.log(progress);
 
-      
+      var individualProgressHtml = '<div class='item'>
+                <p>Sit up: '+progress.sitUp+'</p>
+                <p>Press up: '+progress.PressUps'</p>
+                <p>Weight: '+progress.weight'</p>
+              </div>';
+      allProgressHtml = allProgressHtml + individualProgressHtml;
 
     });
 
-  })
-  firebase.analytics();
+  });
 </script>
 
 <main>
+  <div class="top-nav-bar">
+    <div class="search-box">
+
+
+
+  </div>
+  <div class="menu-bar">
+  <ul>
+  <li><a href="#"><i class="" aria-hidden="true"></i>Workouts</a></li>
+  <li><a href="#">Log In</a></li>
+  </ul>
+  </div>
+  <div class="icon">
+   </div>
+ </div>
+
   <h1> Progress tracker</h1>
   <h2> Please update this once a month after compleating the fitness assesment</h2>
-  <form action="action_page.php">
+  <form action=>
     <label for="pressup"><b>How many press ups can you do in two minutes?</b></label>
     <input type="pressup" placeholder="Press up count" name="pressup" required>
     <label for="situp"><b>How many sit ups can you do in two minutes</b></label>
