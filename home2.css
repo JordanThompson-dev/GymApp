@@ -67,42 +67,47 @@ header nav ul li a{
   color: #808080:
 }
 
-section img {
-  width: 90%;
-  margin: 10px 40px 10px 70px;
-  opacity: 0.9;
+.container {
+  max-width: 30em;
+  height: 80px;
 }
 
-.button1 {
-  background-color: #black;
-  border: none;
-  color: white;
-  padding: 32px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 12px;
+
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
 }
+
 .button2 {
   background-color: #black;
   border: none;
-  color: white;
-  padding: 32px 16px;
+  color: black;
+  padding: 50px 50px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 10px;
   cursor: pointer;
   border-radius: 12px;
 }
 
-.button:hover {
+.button1:hover {
   background-color: #555555;
   color: white;
 }
+
+.button2:hover {
+  background-color: #555555;
+  color: white;
+}
+
+.centerbtn {
+text-align: center;
+display: block;
+margin: 20px auto;
+}
+
 .btn-group .button:not(:last-child) {
   border-bottom: none; /* Prevent double borders */  }
