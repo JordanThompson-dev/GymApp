@@ -16,21 +16,23 @@
   $('#loginForm').on('btnLogin', function(e) {
     e.preventDefault();
 
+  if( $('#emailField').val() != '' && $('#pinField').val() != ''){
+
   var data = {
     email    : $('#emailField').val(),
-    pin : $('#pinField').val(),
+    password : $('#pinField').val(),
   };
 
   var auth = null;
   firebase
     .auth()
-    .signInWithEmailAndPassword(data.email, data.pin)
-    .then(function(users){
+    .signInWithEmailAndPassword(data.email, data.password)
+    .then(function(user){
      auth = authData;
-      console.log("Authenticated successfully with payload:", users)
+      console.log("Authenticated successfully with payload:", user)
      auth = users;
     })
     .catch(function(error){
       console.log("Login Failed!", + error);
-    
     });
+  }});
