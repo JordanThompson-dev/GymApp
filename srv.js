@@ -1,9 +1,11 @@
-const express = reqiure ("express");
-const bodyParser= require ("body-parser");
+const express = require("express");
+const bodyParser= require("body-parser");
 const app =express();
-app.use(express.static('client'));
+
+app.use(bodyParser.urlencoded());
+app.use(express.static('public'));
 app.get("/", function(req,res){
-  res.send("index.html")
+  res.sendFile(__dirname+'/index.html')
 });
 
 app.listen(8080, function(){
