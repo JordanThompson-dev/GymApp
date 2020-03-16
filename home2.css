@@ -73,41 +73,16 @@ header nav ul li a{
 }
 
 
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
   padding: 20px;
 }
 
-.button2 {
-  background-color: #black;
-  border: none;
-  color: black;
-  padding: 50px 50px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 10px;
-  cursor: pointer;
-  border-radius: 12px;
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 50;
 }
-
-.button1:hover {
-  background-color: #555555;
-  color: white;
-}
-
-.button2:hover {
-  background-color: #555555;
-  color: white;
-}
-
-.centerbtn {
-text-align: center;
-display: block;
-margin: 20px auto;
-}
-
-.btn-group .button:not(:last-child) {
-  border-bottom: none; /* Prevent double borders */  }
