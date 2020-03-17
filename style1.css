@@ -11,7 +11,7 @@ body{
   background-color: #3FA9FF;
   padding: 20px;
   text-align: center;
-  margin: 0px 250px 0px 300px;
+  margin: 0px 250px;
 }
 
 .menu-bar :hover{
@@ -267,8 +267,8 @@ workouts{
 
 
 .btn-group button {
-  background-color: #4CAF50; /* Green background */
-  border: 1px solid green; /* Green border */
+  background-color: #3FA9FF;
+  border: 1px #4EAFD0;
   color: white; /* White text */
   padding: 40px 50px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
@@ -289,7 +289,7 @@ workouts{
 
 /* Add a background color on hover */
 .btn-group button:hover {
-  background-color: #3e8e41;
+  background-color: #3da3f5;
 }
 
 .footer {
