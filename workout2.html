@@ -105,19 +105,22 @@ $('.popover-header').click(function() {
       <div class="container">
         <div id="myBtnContainer3">
       <p>
-        Workouts:
-
+        Workouts:<br />
+        workout Name:
+        <input id="wName" type="text" name="" value="" >
       </p>
+
 
     <select multiple name="" id="wrk" >
 
-    <option value="push" id="ex1">push-ups</option>
-    <option value="pull"id ="ex2">pull-ups</option>
-    <option value="sit" id ="ex3">sit-ups</option>
-    <option value="chest" id="ex4">chest-press</option>
-    <option value="bicep" id ="ex5">bicep-curl</option>
+    <option  id="ex1" value="">push-ups</option>
+    <option value=""id ="ex2">pull-ups</option>
+    <option value="" id ="ex3">sit-ups</option>
+    <option value="" id="ex4">chest-press</option>
+    <option value="" id ="ex5">bicep-curl</option>
 
   </select>
+
     <button id="sub" onclick = "writeData()"> submit </button>
 </div>
 </div>
@@ -164,17 +167,16 @@ $('.popover-header').click(function() {
         };
 
         //Initialise Firebase
-        //Adding user exersise to database
+        //Adding user workouts to database
         firebase.initializeApp(firebaseConfig);
         var database = firebase.database();
-
-//=========NEW USER=======
 
 var firebaseUsersCollection = database.ref().child('workouts');
           function writeData() {
 
 
               let exercise = {
+                workoutName: document.querySelector('#wName').value,
                 ex1: document.querySelector('#ex1').value,
                 ex2: document.querySelector('#ex2').value,
                 ex3: document.querySelector('#ex3').value,
