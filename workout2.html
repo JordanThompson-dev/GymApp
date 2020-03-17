@@ -1,7 +1,7 @@
 <html>
  <head>
    <meta charset="utf-8">
-   <title>Workout Hub</title>
+   <title>Workout</title>
  </head>
  <body>
 
@@ -109,13 +109,13 @@ $('.popover-header').click(function() {
 
       </p>
 
-    <select name="" id="wrk" >
+    <select multiple name="" id="wrk" >
 
-    <option value="push">push-ups</option>
-    <option value="pull">pull-ups</option>
-    <option value="sit">sit-ups</option>
-    <option value="chest">chest-press</option>
-    <option value="bicep">bicep-curl</option>
+    <option value="push" id="ex1">push-ups</option>
+    <option value="pull"id ="ex2">pull-ups</option>
+    <option value="sit" id ="ex3">sit-ups</option>
+    <option value="chest" id="ex4">chest-press</option>
+    <option value="bicep" id ="ex5">bicep-curl</option>
 
   </select>
     <button id="sub" onclick = "writeData()"> submit </button>
@@ -166,10 +166,25 @@ $('.popover-header').click(function() {
         //Initialise Firebase
         //Adding user exersise to database
         firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
+
+//=========NEW USER=======
+
+var firebaseUsersCollection = database.ref().child('exercises');
           function writeData() {
-            firebase.database().ref("exercises").push({
-              exerciseName: document.getElementById("wrk").value
-            });
+
+
+              let exercise = {
+                ex1: document.querySelector('#ex1').value,
+                ex2: document.querySelector('#ex2').value,
+                ex3: document.querySelector('#ex3').value,
+                ex4: document.querySelector('#ex4').value,
+                ex5: document.querySelector('#ex5').value,
+                //ex6: document.querySelector('#ex6').value,
+
+              };
+              firebaseUsersCollection.push(exercise);
+            //firebase.database().ref("exercises").push(exersice);
           }
 
             //const db= firebase.database().ref("exercises")
