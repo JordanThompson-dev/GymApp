@@ -2,56 +2,61 @@
 <html lang ="en">
 
 <head>
-  <title> Progress tracker </title>
-  <link rel="stylesheet" type="text/css" href="style1.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Progress Tracker</title>
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+<body>
+  <div class="container">
 
-<main>
-  <div class="top-nav-bar">
-    <div class="search-box">
+    <div class="jumbotron">
 
+      <h1>Please Enter User Information</h1>
 
+      <form>
 
-  </div>
-  <div class="menu-bar">
-  <ul>
-  <li><a href="#"><i class="" aria-hidden="true"></i>Workouts</a></li>
-  <li><a href="#">Log In</a></li>
-  </ul>
-  </div>
-  <div class="icon">
-   </div>
- </div>
+      <div class="form-group">
+          <label for="pressUpField">Press up Count: </label>
+          <input type="text" class="form-control" id="pressUpField">
+        </div>
 
-  <h1> Progress tracker</h1>
-  <h2> Please update this once a month after compleating the fitness assesment</h2>
-  <form action=>
-    <label for="pressUp"><b>How many press ups can you do in two minutes?</b></label>
-    <input type="pressUp" placeholder="Press up count" name="pressUp" required>
-
-    <br><label for="sitUp"><b>How many sit ups can you do in two minutes?</b></label>
-    <input type="sitUp" placeholder="Sit up count" name="sitUp" required>
-
-    <br><label for="weight"><b>How much do you weigh?</b></label>
-    <input type="weight" placeholder="Weight" name="weight" required>
+      <div class="form-group">
+          <label for="sitUpField">Sit up Count: </label>
+          <input type="text" class="form-control" id="sitUpField">
+        </div>
 
 
-    <br><a class="btn btn-defaul" onclick="submitProgress()">Submit Progress</a>
-  </form>
+      <div class="form-group">
+          <label for="weightField">Weight: </label>
+          <input type="text" class="form-control" id="weightField">
+        </div>
 
-  <h1>Current statistics </h1>
+        <a class="btn btn-defaul" onclick="submit()">Submit</a>
+      </form>
+    </div>
 
-</main>
+  <!--  <div>
+      <h1>Current Users</h1>
+      <div id="currentUsers">
+      </div>
+    </div>
+  </div> -->
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+
+</body>
 
 <script>
   // Your web app's Firebase configuration
@@ -69,32 +74,19 @@
   firebase.initializeApp(firebaseConfig);
   var database = firebase.database();
 
-  var firebaseUserProgress =database.ref().child('progress')
+  var progressCollection = database.ref().child('progress');
 
-  function submitProgress() {
+  function submit() {
 
-    var progress = {
-      sitUp: $('#sitUp').val(),
-      pressUp: $('#pressUp').val(),
-      weight: $('#weight').val(),
+    var userProgress = {
+      sitUp: $('#sitUpField').val(),
+      pressUp: $('#pressUpField').val(),
+      weight: $('#weightField').val(),
     };
-    firebase.auth().updateProgressWithSitUpAndPressUpAndWeight(progress.sitUp, progress.pressUps, progress.weight)
-    .then(function(progress){
-      console.log("Successbully updated user progress with uid:",
-        progress.uid);
-    })
-    .catch(function(error){
-      console.log("Error updating progress:", error)
-    });
-    firebaseUsersCollection.push(progress);
+
+    progressCollection.push(userProgress);
+    
 };
+
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-<!-- Bootstrap JS -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
-
-<script src="app.js">
-</script>
