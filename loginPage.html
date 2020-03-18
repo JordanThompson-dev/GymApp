@@ -1,19 +1,47 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
 
-  <head>
-    <title> Login </title>
-  </head>
-  <main>
-    <h1> Login </h1>
-    <form action="action_page.php">
-      <label for="user"><b>Username</b></label>
-      <input type="password" placeholder="Enter Username" name="user" required>
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
 
-      <button type="submit">Login</button>
-      <button type="button" class="newuserbtn">New user</button>
-    </form>
+<body>
+  <div class="container">
 
-  </main>
+    <div class="jumbotron">
+
+      <h1>Login</h1>
+
+      <form id="loginForm">
+
+        <div class="form-group">
+          <label for="emailField">Your E-mail: </label>
+          <input type="text" class="form-control" id="emailField">
+        </div>
+
+        <div class="form-group">
+          <label for="pinField">Enter Pin: </label>
+          <input type="text" class="form-control" id="pinField">
+        </div>
+
+        <a class="btn btn-defaul" onclick="loginUser()">Login</a>
+      </form>
+    </div>
+  </div>
+</body>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+
+<script src="app.js"></script>
+</html>

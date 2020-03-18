@@ -1,0 +1,102 @@
+<!DOCTYPE HTML5>
+<html lang ="en">
+
+<head>
+  <title> Progress tracker </title>
+  <link rel="stylesheet" type="text/css" href="style1.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+
+<main>
+  <div class="top-nav-bar">
+    <div class="search-box">
+
+
+
+  </div>
+  <div class="menu-bar">
+  <ul>
+  <li><a href="#"><i class="" aria-hidden="true"></i>Workouts</a></li>
+  <li><a href="#">Log In</a></li>
+  </ul>
+  </div>
+  <div class="icon">
+   </div>
+ </div>
+
+  <h1> Progress tracker</h1>
+  <h2> Please update this once a month after compleating the fitness assesment</h2>
+  <form action=>
+    <label for="pressup"><b>How many press ups can you do in two minutes?</b></label>
+    <input type="pressup" placeholder="Press up count" name="pressup" required>
+    <br><label for="situp"><b>How many sit ups can you do in two minutes?</b></label>
+    <input type="pressup" placeholder="Sit up count" name="situp" required>
+
+
+    <br><a class="btn btn-defaul" onclick="submit()">Submit Progress</a>
+  </form>
+
+  <h1>Current statistics </h1>
+
+</main>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD7dq4bh88ZTL7-k3z2kj3cXwMlr3XgAC4",
+    authDomain: "gymapp-5fbe5.firebaseapp.com",
+    databaseURL: "https://gymapp-5fbe5.firebaseio.com",
+    projectId: "gymapp-5fbe5",
+    storageBucket: "gymapp-5fbe5.appspot.com",
+    messagingSenderId: "50631981290",
+    appId: "1:50631981290:web:dc3e83f3d883c7e1317f93",
+    measurementId: "G-CLFVBS5DM8"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var database = firebase.database();
+
+  var firebaseUserProgress =database.ref().child('progress')
+
+  function submit() {
+
+    var progress = {
+      sitUp: $('#sitUpField').val(),
+      pressUps: $('#pressUpField').val(),
+      weight: $('#weightField').val(),
+    };
+
+    console.log(progress);
+    firebaseUserProgress.push(progress);
+  };
+
+  firebaseProgressCollection.on('value',function(prog){
+
+    var allProgressHtml = "";
+
+    prog.forEach(function(firebaseProgressReference){
+
+      var progress = firebaseProgressReference.val();
+      console.log(progress);
+
+      var individualProgressHtml =  `<div class='item'>
+      <p>Sit Up: `+progress.sitUp+`</p>
+      <p>Press Up: `+progress.PressUps`</p>
+      <p>Weight: `+progress.weight+`</p>
+      </div>`;
+
+      allProgressHtml = allProgressHtml + individualProgressHtml;
+
+    });
+
+  });
+</script>

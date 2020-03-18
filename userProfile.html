@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="utf-8">
+ 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <head>
-    <title> User Profile </title>
-  </head>
-  <main>
-    <h1> Create user profile </h1>
-     <form action="/action_page.php">
-      <label for="fname">First name:</label><br>
-      <input type="text" id="fname" name="fname"><br>
-      <label for="lname">Last name:</label><br>
-      <input type="text" id="lname" name="lname"><br><br>
-      <input type="radio" id="male" name="gender" value="male">
-      <label for="male">Male</label><br>
-      <input type="radio" id="female" name="gender" value="female">
-      <label for="female">Female</label><br>
-      <input type="radio" id="other" name="gender" value="other">
-      <label for="other">Other</label>
-      <label for="height">Height(cm):</label><br>
-      <input type="text" id="height" name="height"><br>
-      <label for="weight">Weight(kg):</label><br>
-      <input type="text" id="weight" name="weight"><br>
-      <input type="submit" value="Submit">
-    </form>
+	<title>User Profile</title>
 
-  </main>
+	<!-- Bootstrap CSS -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+
+	<div>
+		<h1>Your Profile</h1>
+		<div id="currentUser">
+		</div>
+	</div>
+
+</body>
+
+<!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+
+<script src="app.js"></script>
+</html>

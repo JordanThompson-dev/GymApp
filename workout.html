@@ -4,9 +4,12 @@
     <meta charset="utf-8">
     <title>Workouts</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+
+
+
   </head>
   <body>
-    <form class="" action="index.html" method="post" style="border:1px solid #ccc">
+    <form >
       <div class="container">
         <h1>Create Workouts</h1>
          <p>You can Create,Delete and Update Workouts</p>
@@ -14,7 +17,7 @@
     <label for="wr-select"><strong>Workouts:</strong></label>
     <hr />
     <div class="custom-select" style="width:200px;">
-    <select multiple name="" id="wrk" required>
+    <select multiple name="" id="wrk" >
   <option value=""><strong>Please choose one or more</strong></option>
   <option value="push">push-ups</option>
   <option value="pull">pull-ups</option>
@@ -22,16 +25,22 @@
   <option value="chest">chest-press</option>
   <option value="bicep">bicep-curl</option>
 
+
 </select>
+</form>
 
 <hr />
-<div class="addRemove">
-        <button class= type="button" class="delbutton">Delete</button>
-        <button type="submit" class="enterbtn">Add</button>
+
+
+        <button type="button" class="delbutton">Delete</button>
+        <button class="enterbtn" onclick="document.location = 'home.html'">Add</button>
       </div>
       <h2>New workouts</h2>
 <label for="w_name"><strong>New Workout Name</strong></label>
-      <input type="text" placeholder="Enter name" name="wname" required>
+      <input type="text" placeholder="Enter name" name="wname" >
 <button type="submit" class="enterbtn">Enter</button>
+<p>Click the button to toggle between dark and light mode for this page.</p>
+<button type="button" id="dali">Toggle dark mode</button>
+<script src = "workout.js">   </script>
   </body>
 </html>

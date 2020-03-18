@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>BMI Calculator</title>
+
+<!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+
+<body>
+<h1> BMI Calculator</h1> <br/><br/>
+Height in CM
+<input type="text" id="cm"  placeholder = " height"> <br/>
+Weight in KG
+<input type="text" id="kg" placeholder = "weight"> <br/>
+<input type="submit" id="submit" value="calculate"> <br/><br/>
+Under Weight = Less than 18.6<br/>
+<hr />
+Normal Range = 18.6 and 24.9<br/>
+<hr />
+Overweight = Greater than 24.9<br/>
+<div id="result"></div>
+
+<!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+
+  <script>
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyD7dq4bh88ZTL7-k3z2kj3cXwMlr3XgAC4",
+    authDomain: "gymapp-5fbe5.firebaseapp.com",
+    databaseURL: "https://gymapp-5fbe5.firebaseio.com",
+    projectId: "gymapp-5fbe5",
+    storageBucket: "gymapp-5fbe5.appspot.com",
+    messagingSenderId: "50631981290",
+    appId: "1:50631981290:web:dc3e83f3d883c7e1317f93",
+    measurementId: "G-CLFVBS5DM8"
+  };
+
+  //Initialise Firebase
+  firebase.initializeApp(firebaseConfig);
+  var database = firebase.database();
+
+  firebaseHWsCollection.on('value',function(HWs){
+
+  	BmiHtml = "";
+
+  	HWs.forEach(function(firebaseHWReference){
+
+  		var HW = firebaseHWReference.val();
+  		console.log(HW);
+
+  		var individualBmiHtml = `<div class 'item'>
+  		<p>Height: `+HW.height+`</p>
+  		<p>Weight: `+HW.weight+`</p>
+  		<p>BMI: `(+HW.weight / (HW.height * HW.height+)`</p>
+  			</div>`;
+  	});
+
+
+
+</script>
+
+
+<!-- <script>
+document.getElementById("submit").addEventListener("click", bmiCalculator);
+function bmiCalculator(){//this function get height and weight from user input and calculate BMI
+let cm = parseInt(document.getElementById("cm").value);
+let kg = parseFloat(document.getElementById("kg").value);
+
+let bmi;
+let newCm= parseFloat(cm/100);
+
+bmi = kg / (newCm * newCm);
+bmi = bmi.toFixed(2);//Convert a number into a string, keeping only two decimals
+console.log(bmi);
+
+
+document.getElementById("result").innerHTML = "<h1>Your BMI is</h1> " + bmi;
+
+}
+</script> -->
+</body>
+</html>

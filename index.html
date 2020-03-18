@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="utf-8">
-	<title>Welcome!</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="stylesheet.css">
 </head>
+<body style="font-family:Verdana;color:#aaaaaa;">
+<div class="bg">
+  <div class="menu">
+    <a href="#">1</a>
+    <a href="#">2</a>
+  <form action="/action_page.php">
+  <label for="fname">Username</label><br>
+  <input type="text" id="fname" name="fname" value="username"><br>
+  <label for="lname">Password</label><br>
+  <input type="text" id="lname" name="lname" value="******"><br><br>
+</form>
+  </div>
+  <div class="next" type="submit" value="Submit">
+    <a href="#">Next</a>
+  </div>
 
-<body>
 
-	<div class="row">
-		<button type="button" class="block">login</button>
-	</div>
-	<div class="row">
-		<button type="button" class="block">New User</button>
-	</div>
+</div>
 </body>

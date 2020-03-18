@@ -1,0 +1,83 @@
+body {
+  font-family: "Lato", sans-serif
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("img/1.jpg");
+
+  /* Full height */
+  height: 100%;
+  width: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.next {
+  float: center;
+  width:20%;
+  padding-top: 90%;
+  padding-left: 12%;
+  text-align:center;
+}
+
+.next a {
+  background-color:#4287f5;
+  padding:8px;
+  margin-top:7px;
+  display:block;
+  color:black;
+  width: 400px;
+  height: 50px;
+
+}
+
+form {
+  float: right;
+  padding-right: 650%;
+  padding-top: 160%;
+}
+
+.menu {
+  float: right;
+  width:20%;
+  padding-left: 90%;
+  text-align:center;
+}
+.menu a {
+  background-color:#e5e5e5;
+  padding:8px;
+  margin-top:7px;
+  display:block;
+  width:100%;
+  color:black;
+  width: 30px;
+  height: 120px;
+
+}
+.main {
+  float:right;
+  width:60%;
+  padding-left: 14px;
+  padding-right: 70px;
+  font-size: 25px;
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width:100%;
+  }
+}
