@@ -102,3 +102,18 @@ firebase
   }
 })
 }};
+
+//==========USER PROFILE===========
+
+firebaseUsersCollection.on('value',function(users){
+
+  var userHTML = "";
+
+  users.forEach(function(firebaseUserReference){
+
+    var user = firebaseUserReference.val();
+
+    var thisUserHTML = `<div class='item'>
+                  <p>Name: `+users.firstName
+  })
+})
