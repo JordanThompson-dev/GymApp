@@ -36,15 +36,17 @@
   <h1> Progress tracker</h1>
   <h2> Please update this once a month after compleating the fitness assesment</h2>
   <form action=>
-    <label for="pressup"><b>How many press ups can you do in two minutes?</b></label>
-    <input type="pressup" placeholder="Press up count" name="pressup" required>
-    <br><label for="situp"><b>How many sit ups can you do in two minutes?</b></label>
-    <input type="situp" placeholder="Sit up count" name="situp" required>
+    <label for="pressUp"><b>How many press ups can you do in two minutes?</b></label>
+    <input type="pressUp" placeholder="Press up count" name="pressUp" required>
+
+    <br><label for="sitUp"><b>How many sit ups can you do in two minutes?</b></label>
+    <input type="sitUp" placeholder="Sit up count" name="sitUp" required>
+
     <br><label for="weight"><b>How much do you weigh?</b></label>
     <input type="weight" placeholder="Weight" name="weight" required>
 
 
-    <br><a class="btn btn-defaul" onclick="submit()">Submit Progress</a>
+    <br><a class="btn btn-defaul" onclick="submitProgress()">Submit Progress</a>
   </form>
 
   <h1>Current statistics </h1>
@@ -72,9 +74,9 @@
   function submitProgress() {
 
     var progress = {
-      sitUp: $('#sitUpField').val(),
-      pressUps: $('#pressUpField').val(),
-      weight: $('#weightField').val(),
+      sitUp: $('#sitUp').val(),
+      pressUp: $('#pressUp').val(),
+      weight: $('#weight').val(),
     };
     firebase.auth().updateProgressWithSitUpAndPressUpAndWeight(progress.sitUp, progress.pressUps, progress.weight)
     .then(function(progress){
@@ -85,34 +87,14 @@
       console.log("Error updating progress:", error)
     });
     firebaseUsersCollection.push(progress);
+};
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-    firebase.auth().onAuthStateChanged(progress => {
-    if(progess) {
-      window.location = 'progressTracker.html';
-      }
-    })
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    };
-    firebaseProgressCollection.on('value',function(prog){
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
 
-      var allProgressHtml = "";
-
-      prog.forEach(function(firebaseProgressReference){
-
-        var progress = firebaseProgressReference.val();
-        console.log(progress);
-
-        var individualProgressHtml =  `<div class='item'>
-                      <p>Sit Up: `+progress.sitUp+`</p>
-                      <p>Press Up: `+progress.PressUps`</p>
-                      <p>Weight: `+progress.weight+`</p>
-        </div>`;
-
-        allProgressHtml = allProgressHtml + individualProgressHtml;
-
-      });
-
-
-
-  });
+<script src="app.js">
 </script>
