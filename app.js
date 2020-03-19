@@ -83,7 +83,7 @@
     password : $('#pinField').val(),
   };
 
-  var location = 'home.html';
+  var location = 'tempHold/authTest.html';
 
 var auth = null;
 firebase
@@ -98,7 +98,7 @@ firebase
   })
   firebase.auth().onAuthStateChanged(user => {
   if(user) {
-    window.location = 'home.html';
+    window.location = 'tempHold/authTest.html';
   }
 })
 }};
