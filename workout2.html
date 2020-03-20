@@ -5,7 +5,7 @@
  </head>
  <body>
 
-
+   <script src="Filter.js"></script>
    <link rel="stylesheet" type="text/css" href="style1.css">
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -69,13 +69,10 @@ $('.popover-header').click(function() {
    </div>
    <div class="menu-bar">
    <ul>
-   <li><a  href="WorkoutHub.html"> Add Workouts</a></li>
+   <li><a  href="WorkoutHub.html">Workout Hub</a></li>
    <li><a id = "add">Add workout</li>
-
    <li><a id = "new">New workout</li>
-
    <li><a  id="btn">Delete workout</a></li>
-
    </div>
    <div class="icon">
     </div>
@@ -109,8 +106,149 @@ $('.popover-header').click(function() {
         workout Name:
         <input id="wName" type="text" name="" value="" >
       </p>
+      <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+      <button class="btn" onclick="filterSelection('arms')"> Arms</button>
+      <button class="btn" onclick="filterSelection('abs')"> Abs</button>
+      <button class="btn" onclick="filterSelection('chest')"> Chest</button>
+      <button class="btn" onclick="filterSelection('shoulders')"> Shoulders</button>
+      <button class="btn" onclick="filterSelection('legs')"> Legs</button>
+      <button class="btn" onclick="filterSelection('other')">Cardio</button>
+      <div class="row">
+        <div class="filterDiv chest">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/chestPress.jpg">
+				<div class="overlay">
 
 
+				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+        <buttom type="button" class="btn btn-secondary" title="Preview"><i class="fa fa-plus"></i></buttom>
+
+
+				</div>
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Chest Press</h3>
+					<h5>Chest</h5>
+				</div>
+
+			</div>
+    </div>
+      <div class="filterDiv chest">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/pushup.jpg">
+				<div class="overlay">
+
+
+				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus" value="push" onclick = "writeData()"></i></buttom>
+				</div>
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Press Up</h3>
+					<h5>Chest</h5>
+				</div>
+
+			</div>
+    </div>
+    <div class="filterDiv arms">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/BicepCurls.jpg">
+				<div class="overlay">
+
+
+				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				</div>
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Bicep Curls</h3>
+					<h5>Arms</h5>
+				</div>
+
+			</div>
+    </div>
+    <div class="filterDiv arms">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/pushdown.jpg">
+				<div class="overlay">
+
+
+				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				</div>
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Push Down</h3>
+					<h5>Arms</h5>
+				</div>
+
+			</div>
+    </div>
+    <div class="filterDiv shoulders">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/shoulderpress.jpg">
+				<div class="overlay">
+
+
+				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				</div>
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Shoulder Press</h3>
+					<h5>Shoulders</h5>
+				</div>
+
+			</div>
+    </div>
+    <div class="filterDiv shoulders">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/flyLift.jpg">
+				<div class="overlay">
+
+
+				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				</div>
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+<<<<<<< HEAD
     <select multiple name="" id="wrk" >
 
     <option  id="ex1" value="">push-ups</option>
@@ -122,6 +260,153 @@ $('.popover-header').click(function() {
   </select>
 
     <button id="sub" onclick = "writeData()"> submit </button>
+=======
+
+				    <h3>Fly Lift</h3>
+					<h5>Shoulders</h5>
+				</div>
+      </div>
+
+			</div>
+      <div class="filterDiv legs">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/LegPress.jpg">
+				<div class="overlay">
+
+
+				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				</div>
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Leg Press</h3>
+					<h5>Legs</h5>
+				</div>
+
+			</div>
+    </div>
+    <div class="filterDiv legs">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/legRaises.jpg">
+				<div class="overlay">
+
+
+				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				</div>
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Leg Raises</h3>
+					<h5>Legs</h5>
+				</div>
+      </div>
+
+			</div>
+      <div class="filterDiv abs">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/crunches.jpg">
+				<div class="overlay">
+
+
+				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				</div>
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Crunches</h3>
+					<h5>Abs</h5>
+				</div>
+      </div>
+
+			</div>
+      <div class="filterDiv abs">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/HipTwist.jpg">
+				<div class="overlay">
+
+
+				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				</div>
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Hip Rotator</h3>
+					<h5>Abs</h5>
+				</div>
+			</div>
+    </div>
+    <div class="filterDiv other">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/Treadmill.jpg">
+				<div class="overlay">
+
+
+				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				</div>
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Treadmill</h3>
+					<h5>Cardio </h5>
+				</div>
+			</div>
+    </div>
+      <div class="filterDiv other">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/step.jpg">
+				<div class="overlay">
+
+
+				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				</div>
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Step machine</h3>
+					<h5>Cardio </h5>
+				</div>
+			</div>
+    </div>
+		</div>
+
+
+>>>>>>> 1a0026628de89e9f860572adbab957a7e575b530
 </div>
 </div>
 <div class ="alert">
