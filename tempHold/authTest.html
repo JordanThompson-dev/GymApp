@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auth Test</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<a class="btn btn-defaul" onclick="auth()">Authorise</a>
+</body>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+
+<script>
+
+	var firebaseConfig = {
+    apiKey: "AIzaSyD7dq4bh88ZTL7-k3z2kj3cXwMlr3XgAC4",
+    authDomain: "gymapp-5fbe5.firebaseapp.com",
+    databaseURL: "https://gymapp-5fbe5.firebaseio.com",
+    projectId: "gymapp-5fbe5",
+    storageBucket: "gymapp-5fbe5.appspot.com",
+    messagingSenderId: "50631981290",
+    appId: "1:50631981290:web:dc3e83f3d883c7e1317f93",
+    measurementId: "G-CLFVBS5DM8"
+  };
+
+    //Initialise Firebase
+  firebase.initializeApp(firebaseConfig);
+  var database = firebase.database();
+	
+	function auth() {
+
+    var user = firebase.auth().currentUser;
+    var firstName, lastName, email, uid;
+
+    if (user != null) {
+      var name = user.firstName + user.lastName;
+      var email = user.email;
+      var uid = user.uid;
+      console.log(uid)
+    } else {
+    	console.log("User is not signed in")
+    };
+	};
+
+</script>
+</html>

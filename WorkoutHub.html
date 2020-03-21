@@ -14,32 +14,9 @@
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
 
 <script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyD7dq4bh88ZTL7-k3z2kj3cXwMlr3XgAC4",
-    authDomain: "gymapp-5fbe5.firebaseapp.com",
-    databaseURL: "https://gymapp-5fbe5.firebaseio.com",
-    projectId: "gymapp-5fbe5",
-    storageBucket: "gymapp-5fbe5.appspot.com",
-    messagingSenderId: "50631981290",
-    appId: "1:50631981290:web:dc3e83f3d883c7e1317f93",
-    measurementId: "G-CLFVBS5DM8"
-  };
-
-  //Initialise Firebase
-  firebase.initializeApp(firebaseConfig);
-    function writeData() {
-      firebase.database().ref("exercise").set({
-        name: document.getElementByClassName("pop-button").value
-      });
-    }
-
-</script>
- </head>
- <script>
  $(function () {
 
   $('.pop-button').popover({
@@ -51,6 +28,7 @@ $('.popover-header').click(function() {
 	$('.pop-button').popover('hide');
 });
 </script>
+</head>
  <body>
    <div class="top-nav-bar">
      <div class="search-box">
@@ -74,18 +52,17 @@ $('.popover-header').click(function() {
   <button class="btn" onclick="filterSelection('chest')"> Chest</button>
   <button class="btn" onclick="filterSelection('shoulders')"> Shoulders</button>
   <button class="btn" onclick="filterSelection('legs')"> Legs</button>
-  <button class="btn" onclick="filterSelection('other')">Other</button>
+  <button class="btn" onclick="filterSelection('other')">Cardio</button>
 </div>
 	    <div class="row">
         <div class="filterDiv chest">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/costa.png">
+				<img src="img/workouts/chestPress.jpg">
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
-        <buttom type="button" class="btn btn-secondary" title="Preview"><i class="fa fa-plus"></i></buttom>
+				<input type="checkbox" class="btn btn-secondary" title="add to workout" value="chestPress-chest" id="cp">
 
 
 				</div>
@@ -97,7 +74,7 @@ $('.popover-header').click(function() {
 
 
 
-				    <h3>Chess Press</h3>
+				    <h3>Chest Press</h3>
 					<h5>Chest</h5>
 				</div>
 
@@ -106,11 +83,11 @@ $('.popover-header').click(function() {
       <div class="filterDiv chest">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/costa.png">
+				<img src="img/workouts/pushup.jpg">
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				<input value ="PressUp-chest" type="checkbox" id="pup" class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -129,11 +106,11 @@ $('.popover-header').click(function() {
     <div class="filterDiv arms">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/costa.png">
+				<img src="img/workouts/BicepCurls.jpg">
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+	<input type ="checkbox" id ="Bc" value="BicepCurls-Arms"   class="btn btn-secondary" title="add to workout" class="fa fa-plus" />
 				</div>
 				</div>
 
@@ -152,11 +129,11 @@ $('.popover-header').click(function() {
     <div class="filterDiv arms">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/costa.png">
+				<img src="img/workouts/pushdown.jpg">
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				<input type ="checkbox" id = "pda" value = "pushDown-Arms"  class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -175,11 +152,11 @@ $('.popover-header').click(function() {
     <div class="filterDiv shoulders">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/costa.png">
+				<img src="img/workouts/shoulderpress.jpg">
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				<input type ="checkbox" id = "sps" value = "SholderPress-Shoulders"  class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -198,11 +175,11 @@ $('.popover-header').click(function() {
     <div class="filterDiv shoulders">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/costa.png">
+				<img src="img/workouts/flyLift.jpg">
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				<input type ="checkbox" id = "fls" value = "FlyLift-shoulders"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -221,11 +198,11 @@ $('.popover-header').click(function() {
       <div class="filterDiv legs">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/costa.png">
+				<img src="img/workouts/LegPress.jpg">
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				<input type ="checkbox" id = "lpl" value = "LegPress-Legs"  class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -244,11 +221,11 @@ $('.popover-header').click(function() {
     <div class="filterDiv legs">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/costa.png">
+				<img src="img/workouts/legRaises.jpg">
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				<input type ="checkbox" id = "lrl" value = "LegRaises-Legs"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -258,7 +235,7 @@ $('.popover-header').click(function() {
 
 
 
-				    <h3>Random Move</h3>
+				    <h3>Leg Raises</h3>
 					<h5>Legs</h5>
 				</div>
       </div>
@@ -267,11 +244,11 @@ $('.popover-header').click(function() {
       <div class="filterDiv abs">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/costa.png">
+				<img src="img/workouts/crunches.jpg">
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				<input type ="checkbox" id = "ca" value = "Crunches-Abs"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -290,11 +267,11 @@ $('.popover-header').click(function() {
       <div class="filterDiv abs">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/costa.png">
+				<img src="img/workouts/HipTwist.jpg">
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				<input  type="checkbox" id = "hra" value = "HipRotator-Abs"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -304,7 +281,7 @@ $('.popover-header').click(function() {
 
 
 
-				    <h3>Random Move</h3>
+				    <h3>Hip Rotator</h3>
 					<h5>Abs</h5>
 				</div>
 			</div>
@@ -312,11 +289,11 @@ $('.popover-header').click(function() {
     <div class="filterDiv other">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/costa.png">
+				<img src="img/workouts/Treadmill.jpg">
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				<input  type="checkbox" id = "tc" value = "Treadmill-Cardio"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -326,19 +303,19 @@ $('.popover-header').click(function() {
 
 
 
-				    <h3>Random Move</h3>
-					<h5>Other </h5>
+				    <h3>Treadmill</h3>
+					<h5>Cardio </h5>
 				</div>
 			</div>
     </div>
       <div class="filterDiv other">
 			<div class="col-md-3">
 				<div class="product-top">
-				<img src="img/costa.png">
+				<img src="img/workouts/step.jpg">
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				<input  type="checkbox" id = "smc" value = "StepMachine-Cardio"    class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -348,16 +325,94 @@ $('.popover-header').click(function() {
 
 
 
-				    <h3>Random Move</h3>
-					<h5>Other </h5>
+				    <h3>Step machine</h3>
+					<h5>Cardio </h5>
+
+
 				</div>
+
 			</div>
+
+              <p>
+                Please Give Workout Name:
+              </p>
+              <input type="text" name="" value="" id = "add">
+              <button type="button" name="button" id= "write" onclick =writeData()>Add Workout</button>
+              <input type="text"id ="phone" name="" value="">
+              <button type="button" name="button" id="get"  onclick =getData()>view Workout</button>
+<div>
+
+</div>
     </div>
 		</div>
 	</div>
+
+
   <workouts>
   <h1>Workout List</h1>
   <h2><a href="warmup.html">Warmup</a></h2>
 </workouts>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD7dq4bh88ZTL7-k3z2kj3cXwMlr3XgAC4",
+    authDomain: "gymapp-5fbe5.firebaseapp.com",
+    databaseURL: "https://gymapp-5fbe5.firebaseio.com",
+    projectId: "gymapp-5fbe5",
+    storageBucket: "gymapp-5fbe5.appspot.com",
+    messagingSenderId: "50631981290",
+    appId: "1:50631981290:web:dc3e83f3d883c7e1317f93",
+    measurementId: "G-CLFVBS5DM8"
+  };
+  //Initialise Firebase
+        //Adding user workouts to database
+        firebase.initializeApp(firebaseConfig);
+        let database = firebase.database();
+        let phone = document.getElementById('phone');
+  var firebaseUsersCollection = database.ref().child('workouts/' );
+
+
+            function writeData () {
+
+
+            // put your awesome code here
+
+            let checks=document.getElementsByClassName('btn-secondary');
+            let str ='';
+
+for(let i = 0; i<checks.length; i++)
+{
+  if(checks[i].checked === true){
+    str += checks[i].value + " " ;
+  }
+
+}            let exercise = {
+
+                workoutName: document.getElementById('add').value,
+                  exercises: str,
+                 PhoneNumber:document.getElementById('phone').value,
+
+
+};
+
+
+                firebaseUsersCollection.push(exercise);
+
+}
+function getData(){
+let workouts = document.getElementById('phone').value;
+//firebase data retrieval function
+    //path of your data
+    //.once will get all your data in one time
+    firebase.database().ref('workouts/'+workouts).once('value').then(function (snapshot) {
+        //here we will get data
+        //enter your field name
+        //var name=snapshot.val().exercises;
+        var gender=snapshot.val().workoutName;
+        var country=snapshot.val().phoneNumber
+        console.log( gender + country);
+})
+}
+</script>
   </body>
 </html>

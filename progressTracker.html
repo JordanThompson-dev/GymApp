@@ -1,0 +1,92 @@
+<!DOCTYPE HTML5>
+<html lang ="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Progress Tracker</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron">
+
+      <h1>Please Enter User Information</h1>
+
+      <form>
+
+      <div class="form-group">
+          <label for="pressUpField">Press up Count: </label>
+          <input type="text" class="form-control" id="pressUpField">
+        </div>
+
+      <div class="form-group">
+          <label for="sitUpField">Sit up Count: </label>
+          <input type="text" class="form-control" id="sitUpField">
+        </div>
+
+
+      <div class="form-group">
+          <label for="weightField">Weight: </label>
+          <input type="text" class="form-control" id="weightField">
+        </div>
+
+        <a class="btn btn-defaul" onclick="submit()">Submit</a>
+      </form>
+    </div>
+
+  <!--  <div>
+      <h1>Current Users</h1>
+      <div id="currentUsers">
+      </div>
+    </div>
+  </div> -->
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+
+</body>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD7dq4bh88ZTL7-k3z2kj3cXwMlr3XgAC4",
+    authDomain: "gymapp-5fbe5.firebaseapp.com",
+    databaseURL: "https://gymapp-5fbe5.firebaseio.com",
+    projectId: "gymapp-5fbe5",
+    storageBucket: "gymapp-5fbe5.appspot.com",
+    messagingSenderId: "50631981290",
+    appId: "1:50631981290:web:dc3e83f3d883c7e1317f93",
+    measurementId: "G-CLFVBS5DM8"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var database = firebase.database();
+
+  var progressCollection = database.ref().child('progress');
+
+  function submit() {
+
+    var userProgress = {
+      sitUp: $('#sitUpField').val(),
+      pressUp: $('#pressUpField').val(),
+      weight: $('#weightField').val(),
+    };
+
+    progressCollection.push(userProgress);
+    
+};
+
+</script>
+
