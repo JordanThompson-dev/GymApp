@@ -349,10 +349,11 @@ $('.popover-header').click(function() {
 
 
   <workouts>
-  <h1>Workout List</h1>
+  <button type="button" name="button" onclick = "readData()">Workout List</button>
   <h2><a href="warmup.html">Warmup</a></h2>
 </workouts>
 <script>
+
   // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyD7dq4bh88ZTL7-k3z2kj3cXwMlr3XgAC4",
@@ -369,9 +370,21 @@ $('.popover-header').click(function() {
         firebase.initializeApp(firebaseConfig);
         let database = firebase.database();
         let phone = document.getElementById('phone');
+        let ref = database.ref('workouts');
+        ref.on("value" , readData , errData);
   var firebaseUsersCollection = database.ref().child('workouts/' );
 
 
+
+function readData(data){
+   data= data.val();
+   console.log(data);
+
+}
+
+function errData(error){
+  console.log(error.message , error.code);
+}
             function writeData () {
 
 
