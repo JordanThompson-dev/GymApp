@@ -121,8 +121,7 @@ $('.popover-header').click(function() {
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
-        <buttom type="button" class="btn btn-secondary" title="Preview"><i class="fa fa-plus"></i></buttom>
+				<input type="checkbox" class="btn btn-secondary" title="add to workout" value="chestPress-chest" id="cp">
 
 
 				</div>
@@ -147,7 +146,7 @@ $('.popover-header').click(function() {
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus" value="push" onclick = "writeData()"></i></buttom>
+				<input value ="PressUp-chest" type="checkbox" id="pup" class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -170,7 +169,7 @@ $('.popover-header').click(function() {
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+	<input type ="checkbox" id ="Bc" value="BicepCurls-Arms"   class="btn btn-secondary" title="add to workout" class="fa fa-plus" />
 				</div>
 				</div>
 
@@ -193,7 +192,7 @@ $('.popover-header').click(function() {
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				<input type ="checkbox" id = "pda" value = "pushDown-Arms"  class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -216,7 +215,7 @@ $('.popover-header').click(function() {
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				<input type ="checkbox" id = "sps" value = "SholderPress-Shoulders"  class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -239,7 +238,7 @@ $('.popover-header').click(function() {
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				<input type ="checkbox" id = "fls" value = "FlyLift-shoulders"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -248,19 +247,6 @@ $('.popover-header').click(function() {
 
 
 
-<<<<<<< HEAD
-    <select multiple name="" id="wrk" >
-
-    <option  id="ex1" value="">push-ups</option>
-    <option value=""id ="ex2">pull-ups</option>
-    <option value="" id ="ex3">sit-ups</option>
-    <option value="" id="ex4">chest-press</option>
-    <option value="" id ="ex5">bicep-curl</option>
-
-  </select>
-
-    <button id="sub" onclick = "writeData()"> submit </button>
-=======
 
 				    <h3>Fly Lift</h3>
 					<h5>Shoulders</h5>
@@ -275,7 +261,7 @@ $('.popover-header').click(function() {
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				<input type ="checkbox" id = "lpl" value = "LegPress-Legs"  class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -298,7 +284,7 @@ $('.popover-header').click(function() {
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				<input type ="checkbox" id = "lrl" value = "LegRaises-Legs"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -321,7 +307,7 @@ $('.popover-header').click(function() {
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				<input type ="checkbox" id = "ca" value = "Crunches-Abs"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -344,7 +330,7 @@ $('.popover-header').click(function() {
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				<input  type="checkbox" id = "hra" value = "HipRotator-Abs"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -366,7 +352,7 @@ $('.popover-header').click(function() {
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				<input  type="checkbox" id = "tc" value = "Treadmill-Cardio"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -388,7 +374,7 @@ $('.popover-header').click(function() {
 				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
+				<input  type="checkbox" id = "smc" value = "StepMachine-Cardio"    class="btn btn-secondary" title="add to workout" class="fa fa-plus">
 				</div>
 				</div>
 
@@ -404,9 +390,14 @@ $('.popover-header').click(function() {
 			</div>
     </div>
 		</div>
+    <p>
+      Please Give Workout Name:
+    </p>
+    <input type="text" name="" value="" id = "add">
+    <button type="button" name="button" id= "write" onclick =writeData()>Add Workout</button>
+    <input type="text"id ="phone" name="" value="">
+    <button type="button" name="button" id="get"  onclick =getData()>view Workout</button>
 
-
->>>>>>> 1a0026628de89e9f860572adbab957a7e575b530
 </div>
 </div>
 <div class ="alert">
