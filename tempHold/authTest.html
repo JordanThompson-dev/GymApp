@@ -40,14 +40,16 @@
 	function auth() {
 
     var user = firebase.auth().currentUser;
+    var firstName, lastName, email, uid;
 
-    if (user) {
-    	console.log("User is signed in" + user)
+    if (user != null) {
+      var name = user.firstName + user.lastName;
+      var email = user.email;
+      var uid = user.uid;
+      console.log(uid)
     } else {
     	console.log("User is not signed in")
     };
-
-
 	};
 
 </script>
