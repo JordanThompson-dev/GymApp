@@ -90,28 +90,13 @@ firebase
   .then( function(user){
     console.log("Authenticated successfully with payload:", user);
     auth = user;
+    firebase.auth().onAuthStateChanged(user => {
+    if(user) {
+    window.location = 'home2.html';
+  }
+})
   })
   .catch(function(error){
     console.log("Login Failed!", error);
   })
-  firebase.auth().onAuthStateChanged(user => {
-  if(user) {
-    window.location = 'tempHold/authTest.html';
-  }
-})
 }};
-
-//==========USER PROFILE===========
-
-firebaseUsersCollection.on('value',function(users){
-
-  var userHTML = "";
-
-  users.forEach(function(firebaseUserReference){
-
-    var user = firebaseUserReference.val();
-
-    var thisUserHTML = `<div class='item'>
-                  <p>Name: `+users.firstName
-  })
-})
