@@ -37,6 +37,8 @@
   firebase.initializeApp(firebaseConfig);
   var database = firebase.database();
 
+  //check user logged in
+
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log("User logged in")
@@ -44,5 +46,15 @@
       console.log("No user logged in!")
     };
   });
+
+  //logout
+
+  firebase.auth().signOut().then(function(user) {
+    console.log("User Logged Out")
+}).catch(function(error) {
+  console.log("User still logged")
+});
 </script>
 </html>
+
+<!-- https://firebase.google.com/docs/auth/web/manage-users -->
