@@ -14,8 +14,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
-
-
 <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
 
@@ -44,24 +42,20 @@ $('.popover-header').click(function() {
 
    </div>
    <div class="menu-bar">
+     <!-- this code displays list of links-->
    <ul>
    <li><a  href="WorkoutHub.html">Workout Hub</a></li>
 
-   <li><a id = "add" href="WorkoutHub2.html">Add workout</a></li>
-   <li><a id = "new">New workout</li>
+   <li><a id = "add" href="workouthub2.html">Add workout</a></li>
+
    <li><a  id="btn">Delete workout</a></li>
+   <li><a href="loginPage.html">Logout</a></li>
    </div>
    <div class="icon">
     </div>
   </div>
   <div class="container">
-    <div id="myBtnContainer">
-      <p>
-        Add new workout
-          </p>
-          <input type="text" name="" value="" placeholder="new Workout Name">
-          <button type="submit" id = "sub">Submit </button>
-      </div>
+
     </div>
 
     <div class="container">
@@ -69,392 +63,35 @@ $('.popover-header').click(function() {
         <p>
           Delete workout
             </p>
-          <input id ="del" type="text" name="" value="" placeholder="Workout Name">
+          <input id ="del" type="text" name="" value="" placeholder="Workout Name" required>
 
-          <button id="rem" onclick = "removeData()"> Delete </button>
+          <button id="rem" onclick = "removeData()"> Delete workout </button>
 
         </div>
       </div>
       <p id="demo"></p>
-      <div class="container">
-        <div id="myBtnContainer3">
-      <p>
-        Workouts:<br />
-        workout Name:
-        <input id="wName" type="text" name="" value="" >
-      </p>
-      <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-      <button class="btn" onclick="filterSelection('arms')"> Arms</button>
-      <button class="btn" onclick="filterSelection('abs')"> Abs</button>
-      <button class="btn" onclick="filterSelection('chest')"> Chest</button>
-      <button class="btn" onclick="filterSelection('shoulders')"> Shoulders</button>
-      <button class="btn" onclick="filterSelection('legs')"> Legs</button>
-      <button class="btn" onclick="filterSelection('other')">Cardio</button>
-      <div class="row">
-        <div class="filterDiv chest">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/chestPress.jpg">
-				<div class="overlay">
-
-
-				<input type="checkbox" class="btn btn-secondary" title="add to workout" value="chestPress-chest" id="cp">
-
-
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Chest Press</h3>
-					<h5>Chest</h5>
-				</div>
-
-			</div>
-    </div>
-      <div class="filterDiv chest">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/pushup.jpg">
-				<div class="overlay">
-
-
-				<input value ="PressUp-chest" type="checkbox" id="pup" class="btn btn-secondary" title="add to workout" class="fa fa-plus">
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Press Up</h3>
-					<h5>Chest</h5>
-				</div>
-
-			</div>
-    </div>
-    <div class="filterDiv arms">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/BicepCurls.jpg">
-				<div class="overlay">
-
-
-	<input type ="checkbox" id ="Bc" value="BicepCurls-Arms"   class="btn btn-secondary" title="add to workout" class="fa fa-plus" />
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Bicep Curls</h3>
-					<h5>Arms</h5>
-				</div>
-
-			</div>
-    </div>
-    <div class="filterDiv arms">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/pushdown.jpg">
-				<div class="overlay">
-
-
-				<input type ="checkbox" id = "pda" value = "pushDown-Arms"  class="btn btn-secondary" title="add to workout" class="fa fa-plus">
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Push Down</h3>
-					<h5>Arms</h5>
-				</div>
-
-			</div>
-    </div>
-    <div class="filterDiv shoulders">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/shoulderpress.jpg">
-				<div class="overlay">
-
-
-				<input type ="checkbox" id = "sps" value = "SholderPress-Shoulders"  class="btn btn-secondary" title="add to workout" class="fa fa-plus">
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Shoulder Press</h3>
-					<h5>Shoulders</h5>
-				</div>
-
-			</div>
-    </div>
-    <div class="filterDiv shoulders">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/flyLift.jpg">
-				<div class="overlay">
-
-
-				<input type ="checkbox" id = "fls" value = "FlyLift-shoulders"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Fly Lift</h3>
-					<h5>Shoulders</h5>
-				</div>
-      </div>
-
-			</div>
-      <div class="filterDiv legs">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/LegPress.jpg">
-				<div class="overlay">
-
-
-				<input type ="checkbox" id = "lpl" value = "LegPress-Legs"  class="btn btn-secondary" title="add to workout" class="fa fa-plus">
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Leg Press</h3>
-					<h5>Legs</h5>
-				</div>
-
-			</div>
-    </div>
-    <div class="filterDiv legs">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/legRaises.jpg">
-				<div class="overlay">
-
-
-				<input type ="checkbox" id = "lrl" value = "LegRaises-Legs"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Leg Raises</h3>
-					<h5>Legs</h5>
-				</div>
-      </div>
-
-			</div>
-      <div class="filterDiv abs">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/crunches.jpg">
-				<div class="overlay">
-
-
-				<input type ="checkbox" id = "ca" value = "Crunches-Abs"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Crunches</h3>
-					<h5>Abs</h5>
-				</div>
-      </div>
-
-			</div>
-      <div class="filterDiv abs">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/HipTwist.jpg">
-				<div class="overlay">
-
-
-				<input  type="checkbox" id = "hra" value = "HipRotator-Abs"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Hip Rotator</h3>
-					<h5>Abs</h5>
-				</div>
-			</div>
-    </div>
-    <div class="filterDiv other">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/Treadmill.jpg">
-				<div class="overlay">
-
-
-				<input  type="checkbox" id = "tc" value = "Treadmill-Cardio"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Treadmill</h3>
-					<h5>Cardio </h5>
-				</div>
-			</div>
-    </div>
-      <div class="filterDiv other">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/step.jpg">
-				<div class="overlay">
-
-
-				<input  type="checkbox" id = "smc" value = "StepMachine-Cardio"    class="btn btn-secondary" title="add to workout" class="fa fa-plus">
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Step machine</h3>
-					<h5>Cardio </h5>
-				</div>
-			</div>
-      <p>
-        Please Give Workout Name:
-      </p>
-      <input type="text" name="" value="" id = "add">
-      <button type="button" name="button" id= "write" onclick =writeData()>Add Workout</button>
-      <input type="text"id ="phone" name="" value="">
-      <button type="button" name="button" id="get"  onclick =getData()>view Workout</button>
-
-    </div>
-		</div>
-
-</div>
-</div>
-<div class ="alert">
-  you have succesfully added your workout
-
-</div>
-
       <script>
+      //when deleteWorkout button is clicked its contents will be displayed
       document.getElementById("btn").addEventListener("click",function(){
         document.querySelector("#myBtnContainer2").style.display="block";
-        document.querySelector("#myBtnContainer").style.display="none";
-            document.querySelector("#myBtnContainer3").style.display="none";
+        //document.querySelector("#myBtnContainer").style.display="none";
+            //document.querySelector("#myBtnContainer3").style.display="none";
       });
-        document.getElementById("new").addEventListener("click",function(){
-          document.querySelector("#myBtnContainer").style.display="block";
-              document.querySelector("#myBtnContainer2").style.display="none";
-                  document.querySelector("#myBtnContainer3").style.display="none";
-      });
+//when addWorkout button is clicked html contents of delete  will be hidden
       document.getElementById("add").addEventListener("click",function(){
-        document.querySelector("#myBtnContainer3").style.display="block";
-        document.querySelector("#myBtnContainer").style.display="none";
+        //document.querySelector("#myBtnContainer3").style.display="block";
+
         document.querySelector("#myBtnContainer2").style.display="none";
       });
-      //show alert
-      document.getElementById("sub").addEventListener("click",function(){
-        document.querySelector(".alert").style.display="block";
-        document.querySelector("#myBtnContainer3").style.display="none";
-        //Hide alert after 3 seconds
-        setTimeout(function(){ document.querySelector(".alert").style.display="none"; }, 3000);
-      });
+
+
       </script>
       <script>
-        // Your web app's Firebase configuration
-        let firebaseConfig = {
-          apiKey: "AIzaSyD7dq4bh88ZTL7-k3z2kj3cXwMlr3XgAC4",
-          authDomain: "gymapp-5fbe5.firebaseapp.com",
-          databaseURL: "https://gymapp-5fbe5.firebaseio.com",
-          projectId: "gymapp-5fbe5",
-          storageBucket: "gymapp-5fbe5.appspot.com",
-          messagingSenderId: "50631981290",
-          appId: "1:50631981290:web:dc3e83f3d883c7e1317f93",
-          measurementId: "G-CLFVBS5DM8"
-        };
-
-        //Initialise Firebase
-        //Adding user workouts to database
-        firebase.initializeApp(firebaseConfig);
-        let database = firebase.database();
-
-let firebaseUsersCollection = database.ref().child('workouts/');
-          function writeData() {
-
-                        let checks=document.getElementsByClassName('btn-secondary');
-                        let str ='';
-
-            for(let i = 0; i<checks.length; i++)
-            {
-              if(checks[i].checked === true){
-                str += checks[i].value + " " ;
-              }
-
-            }            let exercise = {
-
-                            workoutName: document.getElementById('add').value,
-                              exercises: str,
-                             //PhoneNumber:document.getElementById('phone').value,
-
-
-            };
-
-
-                            firebaseUsersCollection.push(exercise);
-
-            }
 
 
 
-            //const db= firebase.database().ref("exercises")
-          //db.collection("exercises").doc("exerciseName").delete().then(function() {
+            //const db= firebase.database().ref("workouts")
+          //db.collection("exercises").doc("workoutName").delete().then(function() {
     //console.log("Document successfully deleted!");
 //}).catch(function(error) {
 //    console.error("Error removing document: ", error);

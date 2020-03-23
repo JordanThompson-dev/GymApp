@@ -37,7 +37,7 @@ $('.popover-header').click(function() {
    <div class="menu-bar">
    <ul>
    <li><a href="WorkoutList.html">Workouts</a></li>
-   <li><a href="loginPage.html">Log In</a></li>
+   <li><a href="loginPage.html">Logout</a></li>
    </ul>
    </div>
    <div class="icon">
@@ -58,7 +58,7 @@ $('.popover-header').click(function() {
 <script>
 
 
-  // Your web app's Firebase configuration
+  //  web app's Firebase database configuration
   var firebaseConfig = {
     apiKey: "AIzaSyD7dq4bh88ZTL7-k3z2kj3cXwMlr3XgAC4",
     authDomain: "gymapp-5fbe5.firebaseapp.com",
@@ -74,13 +74,13 @@ $('.popover-header').click(function() {
   firebase.database();
   let database = firebase.database();
 
-  // Your web app's Firebase configuration
-let fireheading = document.getElementById("papa");
+  //  web app's Firebase configuration
+  //this function retrieve data from database and  displays the workouts in list, when the user click Workout list button.
+
 function getData(){
         let reff = database.ref("workouts" );
       reff.on("value" ,function(datasnapshot){
-      //  fireheading.textContent= (datasnapshot.val());
-      //  console.log(datasnapshot.val());
+
       let wrks = datasnapshot.val();
 
 let keys=Object.keys(wrks);
@@ -92,18 +92,15 @@ let exercises = wrks[k].exercises;
 let li = document.createElement("li", workoutName + ' ' + exercises);
 document.getElementById('list').appendChild(li);
 li.innerHTML += workoutName;
-          //console.log(workoutName, exercises);
-          //document.getElementById("list").textContent= workoutName;
-        }
-        //console.log(d);
-  //let firebaseUsersCollection = database.ref().child('workouts/' );
-});
+
+}
+}, errData);
 }
 
 
-
+// when the user try to get list of workouts and if there is no recorded workout in tht database error message will be send
 function errData(error){
-  console.log(error.message , error.code);
+  li.innerHTML = (error.message , error.code);
 }
 </script>
   </body>
