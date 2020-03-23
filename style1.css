@@ -36,8 +36,8 @@ body, html {
   margin-top:7px;
   display:block;
   color:black;
-  width: 600px;
-  height: 50px;
+  width: 300%;
+  height: 50%;
 
 }
 
@@ -55,8 +55,8 @@ body, html {
   margin-top:0px;
   display:block;
   color:black;
-  width: 600px;
-  height: 60px;
+  width: 300%;
+  height: 100%;
 
 }
 
@@ -463,4 +463,67 @@ padding: 15px;
 margin-bottom: -10px;
 margin-top: -10px;
 text-align: center;
+}
+/* Home page button navigation */
+.home-group button {
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  height: 180px;
+  width: 100%; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+}
+
+.workoutbutton{
+  background:url(./img/workoutbutton.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  font-size: 1.5em
+}
+
+.warmupbutton{
+  background:url(./img/warmupbutton.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  font-size: 1.5em
+}
+
+.userinfobutton{
+  background:url(./img/userinfobutton.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  font-size: 1.5em
+}
+
+.logoutbutton{
+  background:url(./img/logoutbutton.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  font-size: 1.5em
+}
+
+.home-group button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.home-group button:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: white;
 }
