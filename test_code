@@ -1,0 +1,101 @@
+JUunit
+
+public class MathManager
+{
+  public int add (int a, int b)
+  {
+    int sum = a + b;
+    return sum;
+  }
+
+  public int subtract(int a, int b)
+  {
+    int sum = a - b;
+    return sum;
+  }
+
+  public int multiply(int a, int b)
+  {
+    int sum = a * b;
+    return sum;
+  }
+
+  public double divide(int a, int b)
+  {
+    int sum = a / b;
+    return sum;
+  }
+}
+
+public class MathManagerTest {
+
+  @Test
+  public void testAdd()
+  {
+    MathManager mm = new MathManager();
+    int testValue = mm.add(1, 1);
+    assertEquals (2, testValue);
+  }
+
+  @Test
+  public void testSubtract()
+  {
+    MathManager mm = new MathManager();
+    int testValue = mm.subtract(1, 1);
+    assertEquals(0, testValue);
+  }
+
+  @Test
+  public void testMultiply()
+  {
+    MathManager mm = new MathManager();
+    int testValue = mm.multiply(1, 1);
+    assertEquals(0, testValue);
+  }
+
+  @Test
+  public void testDivide()
+  {
+    MathManager mm = new MathManager();
+    double testValue = mm.divide (1, 1);
+    assertEquals(1, 0, testValue);
+  }
+}
+
+Pytest
+
+class MathManager:
+
+  def add(self, a, b):
+    return a+b
+
+  def subtract(self, a, b):
+    return a - b
+
+  def multiply(self, a, b):
+    return a * b
+
+  def divide (self, a. b):
+    return a/b
+
+import unittest
+import calc
+from MathManager import MathManager
+
+class MathManagerTest(unittest.TestCase):
+
+  def testAdd(self):
+    mm = MathManager()
+    self.assertEqual(mm.add(2,2),4)
+
+  def testSubtract(self):
+    mm = MathManager()
+    self.assertEqual (mm.subtract(5,3),2)
+
+  def testMultiply(self):
+    mm = MathManager()
+    self.assertEqual(mm.multiply(2,2),4)
+
+  def testDivide(self):
+    mm = MathManager()
+    self.assertEqual(mm.divide(4,2)2)
