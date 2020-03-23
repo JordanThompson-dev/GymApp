@@ -260,16 +260,15 @@ margin-right: 5px;
 }
 .overlay{
   display: block;
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   top: 10%;
   margin-left: 0%;
   width: 70px;
 }
-.product-top .overlay:hover{
-  opacity: 1;
 
-  transition: 0.1s;
+input[type=checkbox] {
+    transform: scale(3.5);
 }
 .overlay .fa{
   cursor: pointer;
