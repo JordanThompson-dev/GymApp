@@ -1,3 +1,84 @@
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("img/1.jpg");
+
+  /* Full height */
+  height: 100%;
+  width: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.next {
+  float: center;
+  width:20%;
+  padding-top: 90%;
+  padding-left: 12%;
+  text-align:center;
+}
+
+.next a {
+  background-color:#4287f5;
+  padding:8px;
+  margin-top:7px;
+  display:block;
+  color:black;
+  width: 400px;
+  height: 50px;
+
+}
+
+form {
+  float: right;
+  padding-right: 650%;
+  padding-top: 160%;
+}
+
+.menu {
+  float: right;
+  width:20%;
+  padding-left: 90%;
+  text-align:center;
+}
+.menu a {
+  background-color:#e5e5e5;
+  padding:8px;
+  margin-top:7px;
+  display:block;
+  width:100%;
+  color:black;
+  width: 30px;
+  height: 120px;
+
+}
+.main {
+  float:right;
+  width:60%;
+  padding-left: 14px;
+  padding-right: 70px;
+  font-size: 25px;
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width:100%;
+  }
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -160,16 +241,15 @@ margin-right: 5px;
 }
 .overlay{
   display: block;
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   top: 10%;
   margin-left: 0%;
   width: 70px;
 }
-.product-top .overlay:hover{
-  opacity: 1;
 
-  transition: 0.1s;
+input[type=checkbox] {
+    transform: scale(3.5);
 }
 .overlay .fa{
   cursor: pointer;
@@ -290,6 +370,67 @@ workouts{
 /* Add a background color on hover */
 .btn-group button:hover {
   background-color: #3da3f5;
+}
+
+.warmuplist {
+  padding-left: 8%;
+  padding-top: 2%;
+}
+/* Image 1 */
+.imageone {
+  background:url(./img/treadmill.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.imageone:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+}
+
+.imagetwo {
+  background:url(./img/stretches.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.imagetwo:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+}
+
+.imagethree {
+  background:url(./img/pushups.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.imagethree:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+}
+.textone {
+  background-color: transparent;
+  border: transparent;
+  color: black; /* White text */
+  padding: 10.5% 10%;/* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
 }
 
 .footer {

@@ -83,8 +83,6 @@
     password : $('#pinField').val(),
   };
 
-  var location = 'tempHold/authTest.html';
-
 var auth = null;
 firebase
   .auth()
