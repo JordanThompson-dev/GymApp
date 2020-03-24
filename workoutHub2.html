@@ -10,11 +10,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+
 
 <script>
  $(function () {
@@ -38,7 +39,7 @@ $('.popover-header').click(function() {
    <div class="menu-bar">
    <ul>
    <li><a href="workout2.html">Workouts</a></li>
-   <!--<li><a href="loginPage.html">Log In</a></li>-->
+   <li><a href="loginPage.html">Logout</a></li>
    </ul>
    </div>
    <div class="icon">
@@ -46,6 +47,7 @@ $('.popover-header').click(function() {
   </div>
   <div class="container">
     <div id="myBtnContainer">
+      <!--those buttons diplays workouts of Arms,Abs,chest... with their images -->
   <button class="btn active" onclick="filterSelection('all')"> Show all</button>
   <button class="btn" onclick="filterSelection('arms')"> Arms</button>
   <button class="btn" onclick="filterSelection('abs')"> Abs</button>
@@ -344,6 +346,7 @@ $('.popover-header').click(function() {
       Please Give Workout Name:
     </p>
     <input type="text" name="" value="" id = "add">
+    <!--this button calls writeData function which adds data to database-->
     <button type="button" name="button" id= "write" onclick =writeData()>Add Workout</button>
 	</div>
 
@@ -352,27 +355,33 @@ $('.popover-header').click(function() {
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyD7dq4bh88ZTL7-k3z2kj3cXwMlr3XgAC4",
-    authDomain: "gymapp-5fbe5.firebaseapp.com",
-    databaseURL: "https://gymapp-5fbe5.firebaseio.com",
-    projectId: "gymapp-5fbe5",
-    storageBucket: "gymapp-5fbe5.appspot.com",
-    messagingSenderId: "50631981290",
-    appId: "1:50631981290:web:dc3e83f3d883c7e1317f93",
-    measurementId: "G-CLFVBS5DM8"
+    apiKey: "AIzaSyBEJuxPQk7kgHg6KWNk4OqmiO2ji5XCSaM",
+    authDomain: "gymapp-cb244.firebaseapp.com",
+    databaseURL: "https://gymapp-cb244.firebaseio.com",
+    projectId: "gymapp-cb244",
+    storageBucket: "gymapp-cb244.appspot.com",
+    messagingSenderId: "33396281966",
+    appId: "1:33396281966:web:7e477a69afc5c3626d4c7f",
+    measurementId: "G-7WHJHCN3T0"
   };
+
   //Initialise Firebase
+  firebase.initializeApp(firebaseConfig);
+  var database = firebase.database();
+
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      console.log("User logged in")
+    } else {
+      console.log("No user logged in!")
+    };
+  });
+
         //Adding user workouts to database
-        firebase.initializeApp(firebaseConfig);
-        let database = firebase.database();
-        let phone = document.getElementById('phone');
-  var firebaseUsersCollection = database.ref().child('workouts/' );
 
-
-            function writeData () {
-
-
-            // put your awesome code here
+  let firebaseUsersCollection = database.ref().child('workouts/' );
+// writeData function adds workout name and exercises to database
+  function writeData () {
 
             let checks=document.getElementsByClassName('btn-secondary');
             let str ='';
@@ -387,29 +396,17 @@ for(let i = 0; i<checks.length; i++)
 
                 workoutName: document.getElementById('add').value,
                   exercises: str,
-                 //PhoneNumber:document.getElementById('phone').value,
+
 
 
 };
 
-
+//push is a method used to add data in firebase database
                 firebaseUsersCollection.push(exercise);
 
 }
-function getData(){
-let workouts = document.getElementById('phone').value;
-//firebase data retrieval function
-    //path of your data
-    //.once will get all your data in one time
-    firebase.database().ref('workouts/'+workouts).once('value').then(function (snapshot) {
-        //here we will get data
-        //enter your field name
-        //var name=snapshot.val().exercises;
-        var gender=snapshot.val().workoutName;
-        var country=snapshot.val().phoneNumber
-        console.log( gender + country);
-})
-}
+
+
 </script>
   </body>
 </html>

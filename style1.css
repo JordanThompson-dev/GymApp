@@ -478,6 +478,7 @@ text-align: center;
 }
 /* Home page button navigation */
 .home-group button {
+  color:#007bff;
   padding: 10px 24px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
   height: 180px;
@@ -537,5 +538,6 @@ text-align: center;
 .home-group button:hover {
   background-color: black;
   opacity: 0.5;
-  color: white;
+  color:#007bff;
+
 }
