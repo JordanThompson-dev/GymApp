@@ -299,20 +299,27 @@
 </body>
 
 <script>
-  // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyBEJuxPQk7kgHg6KWNk4OqmiO2ji5XCSaM",
-    authDomain: "gymapp-cb244.firebaseapp.com",
-    databaseURL: "https://gymapp-cb244.firebaseio.com",
-    projectId: "gymapp-cb244",
-    storageBucket: "gymapp-cb244.appspot.com",
-    messagingSenderId: "33396281966",
-    appId: "1:33396281966:web:7e477a69afc5c3626d4c7f",
-    measurementId: "G-7WHJHCN3T0"
-  };
+  apiKey: "AIzaSyBEJuxPQk7kgHg6KWNk4OqmiO2ji5XCSaM",
+  authDomain: "gymapp-cb244.firebaseapp.com",
+  databaseURL: "https://gymapp-cb244.firebaseio.com",
+  projectId: "gymapp-cb244",
+  storageBucket: "gymapp-cb244.appspot.com",
+  messagingSenderId: "33396281966",
+  appId: "1:33396281966:web:7e477a69afc5c3626d4c7f",
+  measurementId: "G-7WHJHCN3T0"
+};
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   var database = firebase.database();
+//check user logged in
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      console.log("User logged in")
+    } else {
+      console.log("No user logged in!")
+    };
+  });
 
   var progressCollection = database.ref().child('progress');
 
@@ -323,7 +330,7 @@
       pressUp: $('#pressUpField').val(),
       weight: $('#weightField').val(),
     };
-
+//update user statistics 
     progressCollection.update(userProgress);
 
 };
