@@ -6,7 +6,7 @@ body, html {
 
 .bg {
   /* The image used */
-  background-image: url("img/1.jpg");
+  background-image: url("img/indexbackground.jpg");
 
   /* Full height */
   height: 100%;
@@ -22,12 +22,25 @@ body, html {
   box-sizing: border-box;
 }
 
+.indexh1 {
+ padding-top: 20%;
+ text-align:center;
+ color: white;
+}
+
+.indexp {
+ padding-top: 1%;
+ text-align:center;
+ color: white;
+}
+
 .login {
-  float: center;
-  width:40%;
-  padding-top: 90%;
-  padding-left: 12%;
+  padding-top: 5%;
   text-align:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .login a {
@@ -36,17 +49,17 @@ body, html {
   margin-top:7px;
   display:block;
   color:black;
-  width: 300%;
-  height: 50%;
-
+  width: 60%;
+  height: 20%;
 }
 
 .signup {
-  float: center;
-  width:40%;
   padding-top: 2%;
-  padding-left: 12%;
   text-align:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .signup a {
@@ -55,9 +68,8 @@ body, html {
   margin-top:0px;
   display:block;
   color:black;
-  width: 300%;
-  height: 100%;
-
+  width: 60%;
+  height: 20%;
 }
 
 form {
