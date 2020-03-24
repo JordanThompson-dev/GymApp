@@ -49,7 +49,7 @@ $('.popover-header').click(function() {
    <li><a id = "add" href="workouthub2.html">Add workout</a></li>
 
    <li><a  id="btn">Delete workout</a></li>
-   <li><a href="loginPage.html">Logout</a></li>
+   <li><a id = "log" href=logout()>Logout</a></li>
    </div>
    <div class="icon">
     </div>
@@ -71,6 +71,14 @@ $('.popover-header').click(function() {
       </div>
       <p id="demo"></p>
       <script>
+      function logout(){
+        firebase.auth().signOut().then(function(user) {
+        document.getElementById("log").addEventListener("click", login.html);
+
+      }).catch(function(error) {
+        console.log("User still logged")
+      });
+      }
       //when deleteWorkout button is clicked its contents will be displayed
       document.getElementById("btn").addEventListener("click",function(){
         document.querySelector("#myBtnContainer2").style.display="block";
