@@ -17,6 +17,14 @@
 <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
 
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+
 
 
 
@@ -49,7 +57,7 @@ $('.popover-header').click(function() {
    <li><a id = "add" href="workouthub2.html">Add workout</a></li>
 
    <li><a  id="btn">Delete workout</a></li>
-   <li><a id = "log" href=logout()>Logout</a></li>
+   <li><a id = "log" onclick="logout()">Logout</a></li>
    </div>
    <div class="icon">
     </div>
@@ -71,14 +79,17 @@ $('.popover-header').click(function() {
       </div>
       <p id="demo"></p>
       <script>
-      function logout(){
+      function logout() {
         firebase.auth().signOut().then(function(user) {
-        document.getElementById("log").addEventListener("click", login.html);
+          firebase.auth().onAuthStateChanged(user => {
+           if(user = null) {
+            window.location = 'loginPage.html';
+            }
 
       }).catch(function(error) {
         console.log("User still logged")
-      });
-      }
+      })
+      })};
       //when deleteWorkout button is clicked its contents will be displayed
       document.getElementById("btn").addEventListener("click",function(){
         document.querySelector("#myBtnContainer2").style.display="block";
