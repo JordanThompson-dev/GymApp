@@ -10,11 +10,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+
 
 <script>
  $(function () {
@@ -363,6 +364,11 @@ $('.popover-header').click(function() {
     appId: "1:33396281966:web:7e477a69afc5c3626d4c7f",
     measurementId: "G-7WHJHCN3T0"
   };
+
+  //Initialise Firebase
+  firebase.initializeApp(firebaseConfig);
+  var database = firebase.database();
+
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log("User logged in")
@@ -370,11 +376,9 @@ $('.popover-header').click(function() {
       console.log("No user logged in!")
     };
   });
-  //Initialise Firebase
+  
         //Adding user workouts to database
-        firebase.initializeApp(firebaseConfig);
-        let database = firebase.database();
-        let phone = document.getElementById('phone');
+
   let firebaseUsersCollection = database.ref().child('workouts/' );
 // writeData function adds workout name and exercises to database
   function writeData () {

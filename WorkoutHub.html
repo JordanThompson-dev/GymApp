@@ -10,9 +10,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
 
-<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
 
 
 <script>
@@ -49,12 +48,22 @@ $('.popover-header').click(function() {
   <workouts>
   <center>
     <button type="button" name="button" onclick = getData()>list WorkoutName</button>
-    <p id="list"></p>
+    <ol id="list"></ol>
   <!--<button type="button" name="button" onclick = "gotData()">Workout List</button>-->
   </center>
   <h2><a href="warmup.html">Warmup</a></h2>
 
 </workouts>
+<style>
+ol {
+  background: #3399ff;
+  padding: 20px;
+}
+ol li {
+  background: #cce5ff;
+  margin: 5px;
+}
+</style>
 <script>
 
 
@@ -69,6 +78,14 @@ $('.popover-header').click(function() {
     appId: "1:33396281966:web:7e477a69afc5c3626d4c7f",
     measurementId: "G-7WHJHCN3T0"
   };
+
+
+
+  //Initialise Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  let database = firebase.database();
+
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log("User logged in")
@@ -76,10 +93,6 @@ $('.popover-header').click(function() {
       console.log("No user logged in!")
     };
   });
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.database();
-  let database = firebase.database();
 
   //  web app's Firebase configuration
   //this function retrieve data from database and  displays the workouts in list, when the user click Workout list button.
@@ -96,11 +109,11 @@ let keys=Object.keys(wrks);
           let k =keys[i];
           let workoutName = wrks[k].workoutName;
 let exercises = wrks[k].exercises;
-let li = document.createElement("li", workoutName + ' ' + exercises);
+let li = document.createElement("li");
 document.getElementById('list').appendChild(li);
-li.innerHTML += workoutName;
+li.innerHTML += workoutName +  "    --  " +  "  "+ exercises;}
 
-}
+
 }, errData);
 }
 
