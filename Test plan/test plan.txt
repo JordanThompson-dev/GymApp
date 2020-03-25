@@ -72,4 +72,17 @@ The user click on the Legs button from the left navigation and system should dis
 3.1.1 .8 “Navigate Cardio workouts” test case
 The user click on the Cardio button from the left navigation and system should display only the Cardio workouts with textbox and image on the page.
 
+3.1.1 .9 'Submit new user' test case
+The user will input their first name, last name, email, pin, weight, height and date of birth. System should display main screen and executive summary showing Home page.
+
+3.1.1 .10 'Navigate BMI calculator' test case
+The user will input their weight and height and click the calculate button. System should display their BMI along with 'Under weight' / 'Normal weight' / 'Overweight'.
+
+3.1.1 .11 'Navigate Login welcome page' test case
+The user will click on the login button from the welcome page and system should display the login  page. 
+
+3.1.1 12 "Navigate Sign Up welcome page' test case
+The user will click sign up button from the welcome page and system should display the sign up page. 
+
+
 
