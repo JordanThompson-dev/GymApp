@@ -82,7 +82,32 @@ The user will input their weight and height and click the calculate button. Syst
 The user will click on the login button from the welcome page and system should display the login  page. 
 
 3.1.1 12 "Navigate Sign Up welcome page' test case
-The user will click sign up button from the welcome page and system should display the sign up page. 
+The user will click the sign up button from the welcome page and system should display the sign up page. 
 
+3.1.1 13 "Navigate Workout Hub from home page" test case
+The user will click the Workout Hub button from the home page and system should display the Workout Hub page. 
 
+3.1.1 14 "Navigate Warm-up from home page" test case
+The user will click the Warm-up button from the home page and system should display the Warm-up page. 
+
+3.1.1 15 "Navigate User info from home page' test case
+The user will click the User Info button from the home page and system should display the User Info page. 
+
+3.1.1 16 "Navigate Log out from home page'
+The user will click the Log out button from the home page and system should display the index page.
+
+3.1.1 17 "Navigate Progress tracker" test case
+The user will input their press up count, sit up count and weight. Then the user can select which graph they want to view (eg. Press up graph / sit up graph / weight graph).
+
+3.1.1 18 "Navigate list of workouts" test case
+The user will select the list workout button from the workout hub page and a list of workouts should display. 
+
+3.1.1 19 "Navigate Workout hub page" test case
+The user will select the Warmup button from the Workout hub page and the system should display the warm up Warm up page. 
+
+3.1.1 20 "Add workout" test case
+The user will select the Add workout button from the workout page and the system should display a page where they can enter a workout name or click on one of the buttons to select a category and a list of different types of exercises will display. 
+
+3.1.1 21 "Delete workout test case
+The user will select the Add workout button from the workout page and the system should display a page where they can enter the name of the workout to delete. 
 
