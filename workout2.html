@@ -31,6 +31,19 @@
 
 
  <script>
+ var firebaseConfig = {
+   apiKey: "AIzaSyBEJuxPQk7kgHg6KWNk4OqmiO2ji5XCSaM",
+   authDomain: "gymapp-cb244.firebaseapp.com",
+   databaseURL: "https://gymapp-cb244.firebaseio.com",
+   projectId: "gymapp-cb244",
+   storageBucket: "gymapp-cb244.appspot.com",
+   messagingSenderId: "33396281966",
+   appId: "1:33396281966:web:7e477a69afc5c3626d4c7f",
+   measurementId: "G-7WHJHCN3T0"
+ };
+
+ //Initialise Firebase
+ firebase.initializeApp(firebaseConfig);
  $(function () {
 
   $('.pop-button').popover({
@@ -98,33 +111,46 @@ $('.popover-header').click(function() {
       });
 //when addWorkout button is clicked html contents of delete  will be hidden
       document.getElementById("add").addEventListener("click",function(){
-        //document.querySelector("#myBtnContainer3").style.display="block";
-
         document.querySelector("#myBtnContainer2").style.display="none";
       });
 
 
-      </script>
-      <script>
 
 
 
-            //const db= firebase.database().ref("workouts")
+
+
+            const db= firebase.database();
           //db.collection("exercises").doc("workoutName").delete().then(function() {
     //console.log("Document successfully deleted!");
 //}).catch(function(error) {
 //    console.error("Error removing document: ", error);
 //});
 
-
+let iu = document.getElementById("del").value;
 
 function removeData(){
-  let del = document.getElementById("del").value;
+  let reff = db.ref("workouts" );
+reff.on("value" ,function(datasnapshot){
 
-  document.getElementById("demo").innerHTML = "you have deleted " + del;
-  document.querySelector("#myBtnContainer2").style.display="none";
-document.querySelector("#demo").style.display="block";
-}
-      </script>
+let wrks = datasnapshot.val();
+
+let keys=Object.keys(wrks);
+  //console.log(keys);
+  for(let i =0; i<keys.length;i++){
+    let k =keys[i];
+    let workoutName = wrks[k].workoutName;
+    if(iu===workoutName){
+      console.log("we");
+//db.ref("workouts/k").remove();
+  //let userRef = this.database.ref('workouts/' + keys);
+      //userRef.remove();
+    }
+  }});
+  }
+
+
+
+  </script>
 </body>
 </html>
