@@ -1,0 +1,23 @@
+{
+  "name": "GymApp",
+  "version": "1.0.0",
+  "description": "System Engineering Team6B",
+  "main": "BMICalculator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UP892527/GymApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UP892527/GymApp/issues"
+  },
+  "homepage": "https://github.com/UP892527/GymApp#readme",
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
+}
