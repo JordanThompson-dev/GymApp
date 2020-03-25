@@ -508,6 +508,16 @@ text-align: center;
   font-size: 1.5em
 }
 
+.warmupbutton2 {
+  background-color: #3FA9FF;
+  color: white;
+  position: center;
+}
+
+.warmupbuttontext {
+  color: white;
+}
+
 .userinfobutton{
   background:url(./img/userinfobutton.jpg);
   background-size: 100%;
