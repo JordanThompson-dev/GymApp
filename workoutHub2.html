@@ -39,7 +39,7 @@ $('.popover-header').click(function() {
    <div class="menu-bar">
    <ul>
    <li><a href="workout2.html">Workouts</a></li>
-   <li><a href="loginPage.html">Logout</a></li>
+   <li><a id = "log" onclick="logout()">Logout</a></li>
    </ul>
    </div>
    <div class="icon">
@@ -353,6 +353,17 @@ $('.popover-header').click(function() {
 
 
 <script>
+function logout() {
+  firebase.auth().signOut().then(function(user) {
+    firebase.auth().onAuthStateChanged(user => {
+     if(user = null) {
+      window.location = 'index.html';
+      }
+
+}).catch(function(error) {
+  console.log("User still logged")
+})
+})};
   // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyBEJuxPQk7kgHg6KWNk4OqmiO2ji5XCSaM",
