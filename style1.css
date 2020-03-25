@@ -6,7 +6,7 @@ body, html {
 
 .bg {
   /* The image used */
-  background-image: url("img/1.jpg");
+  background-image: url("img/indexbackground.jpg");
 
   /* Full height */
   height: 100%;
@@ -22,23 +22,54 @@ body, html {
   box-sizing: border-box;
 }
 
-.next {
-  float: center;
-  width:20%;
-  padding-top: 90%;
-  padding-left: 12%;
-  text-align:center;
+.indexh1 {
+ padding-top: 20%;
+ text-align:center;
+ color: white;
 }
 
-.next a {
+.indexp {
+ padding-top: 1%;
+ text-align:center;
+ color: white;
+}
+
+.login {
+  padding-top: 5%;
+  text-align:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.login a {
   background-color:#4287f5;
   padding:8px;
   margin-top:7px;
   display:block;
   color:black;
-  width: 400px;
-  height: 50px;
+  width: 60%;
+  height: 20%;
+}
 
+.signup {
+  padding-top: 2%;
+  text-align:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.signup a {
+  background-color:#4287f5;
+  padding:8px;
+  margin-top:0px;
+  display:block;
+  color:black;
+  width: 60%;
+  height: 20%;
 }
 
 form {
@@ -444,4 +475,69 @@ padding: 15px;
 margin-bottom: -10px;
 margin-top: -10px;
 text-align: center;
+}
+/* Home page button navigation */
+.home-group button {
+  color:#007bff;
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  height: 180px;
+  width: 100%; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+}
+
+.workoutbutton{
+  background:url(./img/workoutbutton.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  font-size: 1.5em
+}
+
+.warmupbutton{
+  background:url(./img/warmupbutton.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  font-size: 1.5em
+}
+
+.userinfobutton{
+  background:url(./img/userinfobutton.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  font-size: 1.5em
+}
+
+.logoutbutton{
+  background:url(./img/logoutbutton.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  font-size: 1.5em
+}
+
+.home-group button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.home-group button:hover {
+  background-color: black;
+  opacity: 0.5;
+  color:#007bff;
+
 }

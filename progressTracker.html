@@ -8,26 +8,96 @@
   <script src="Filter.js"></script>
   <title>Progress Tracker</title>
   <style>
+  .menu-bar ul{
+    display: inline-flex;
+    float: left;
+  }
+  .menu-bar ul li{
+    border-right: 2px solid #fff;
+    list-style-type: none;
+    padding: 10px 25px;
+    text-align: center;
+    background-color: #3FA9FF;
+    cursor: pointer;
+  }
+  .menu-bar ul li a{
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+  }
+  .menu-bar :hover{
+    background-color: #3da3f5;
+
+  }
+  .top-nav-bar{
+    background-color: #3FA9FF;
+    height: 57px;
+    top: 0;
+    position: sticky;
+    border-bottom: 3px solid #4EAFD0;
+    z-index: 2;
+  }
   .graph{
-    max-width: 20%;
-    max-height:30%;
+    max-width: 30em;
+    max-height:30em;
+    min-width: 10em;
+    min-height: 10em;
+    padding-bottom: 5em;
   }
   .filterDiv {
-  left:50%;
-  color: #ffffff;
-  line-height: 100px;
-  text-align: center;
-  margin: auto;
-  display: none; /* Hidden by default */
+    padding-top: 2em;
+    position: fixed; /* or absolute */
+    left: 20em;
+    color: #ffffff;
+    line-height: 100px;
+    display: none; /* Hidden by default */
 }
 .show {
-  display: block;
+  display: inline-block;
+  position: relative;
+}
+@media only screen and (max-width: 980px)
+{
+  .top-nav-bar
+  {
+    height: 118px;
+    border-bottom: 1%;
+  }
+  .search-box
+  {
+    width: 100%;
+  }
+  .menu-bar
+  {
+    width: 100%;
+  }
+  .menu-bar ul
+  {
+    margin: 10px 0;
+    width: 100%;
+  }
+  .menu-bar ul li
+  {
+    height: 57px;
+    width: 100%;
+  }
 }
 
 
 
 
   </style>
+  <div class="top-nav-bar">
+  <div class="menu-bar">
+  <ul>
+  <li><a  href="home2.html">Home</a></li>
+  <!--<li><a href="loginPage.html">Log In</a></li>-->
+  </ul>
+  </div>
+  <div class="icon">
+   </div>
+ </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -35,10 +105,10 @@
 
 <body>
   <div class="container">
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection('graph1')"> Graph 1</button>
-  <button class="btn" onclick="filterSelection('graph2')"> Graph 2</button>
-  <button class="btn" onclick="filterSelection('graph3')"> Graph 3</button>
+  <button class="btn active" onclick="filterSelection('graph0')"> Hide</button>
+  <button class="btn" onclick="filterSelection('graph1')"> Press Up Graph</button>
+  <button class="btn" onclick="filterSelection('graph2')"> Sit Up Graph</button>
+  <button class="btn" onclick="filterSelection('graph3')"> Weight Graph</button>
   </div>
   <div>
     <div class="filterDiv graph1">
@@ -53,8 +123,8 @@
         data: {
             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                label: '# of Press Ups',
+                data: [4, 25],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -101,8 +171,8 @@
     data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: '# of Sit Ups',
+            data: [4,48],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -149,8 +219,8 @@
     data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: 'Weight in KG',
+            data: [85,76],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -229,20 +299,27 @@
 </body>
 
 <script>
-  // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyD7dq4bh88ZTL7-k3z2kj3cXwMlr3XgAC4",
-    authDomain: "gymapp-5fbe5.firebaseapp.com",
-    databaseURL: "https://gymapp-5fbe5.firebaseio.com",
-    projectId: "gymapp-5fbe5",
-    storageBucket: "gymapp-5fbe5.appspot.com",
-    messagingSenderId: "50631981290",
-    appId: "1:50631981290:web:dc3e83f3d883c7e1317f93",
-    measurementId: "G-CLFVBS5DM8"
-  };
+  apiKey: "AIzaSyBEJuxPQk7kgHg6KWNk4OqmiO2ji5XCSaM",
+  authDomain: "gymapp-cb244.firebaseapp.com",
+  databaseURL: "https://gymapp-cb244.firebaseio.com",
+  projectId: "gymapp-cb244",
+  storageBucket: "gymapp-cb244.appspot.com",
+  messagingSenderId: "33396281966",
+  appId: "1:33396281966:web:7e477a69afc5c3626d4c7f",
+  measurementId: "G-7WHJHCN3T0"
+};
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   var database = firebase.database();
+//check user logged in
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      console.log("User logged in")
+    } else {
+      console.log("No user logged in!")
+    };
+  });
 
   var progressCollection = database.ref().child('progress');
 
@@ -253,7 +330,7 @@
       pressUp: $('#pressUpField').val(),
       weight: $('#weightField').val(),
     };
-
+//update user statistics
     progressCollection.update(userProgress);
 
 };
