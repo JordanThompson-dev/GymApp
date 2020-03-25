@@ -109,5 +109,30 @@ The user will select the Warmup button from the Workout hub page and the system 
 The user will select the Add workout button from the workout page and the system should display a page where they can enter a workout name or click on one of the buttons to select a category and a list of different types of exercises will display. 
 
 3.1.1 21 "Delete workout test case
-The user will select the Add workout button from the workout page and the system should display a page where they can enter the name of the workout to delete. 
+The user will select the delete workout button from the workout page and the system should display a page where they can enter the name of the workout to delete. 
 
+4.0  TEST CASES
+
+4.1 “Login valid user” test case
+
+1.1	loginUser() does not result in a null value
+1.1.1 parameter value = “email”
+1.1.2   Expected input: login value =”hello@email.com”
+1.2  loginUser() does not result in a null value
+1.2.1 parameter=”password”
+1.2.2 password value=”world”
+	Execute: validate(“hello@email.com”, “world”)
+Expected output: Display main screen. 	
+ 
+
+4.2. “Login Invalid user” test case
+
+1.1 loginUser() does not result in a null value
+1.1.1  parameter value= “userName”
+1.1.2 Expected Input:  login value =”wrongusername”
+1.2 loginUser() does not result in a null value
+1.2.1 parameter value=”password”
+1.2.2 Expected Input:  password value=”wrongpasswd”
+	Execute: validate(“wrongusername”, “wrongpasswd”)
+	Expected output: Display screen with authentication-failed message.
+	
