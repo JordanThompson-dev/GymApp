@@ -1,0 +1,75 @@
+Software Test Plan (STP) for
+                                     Gym App Application
+
+
+1.0  INTRODUCTION
+
+The purpose of this Software Test Plan (STP) is to develop a test plan to assess all functionalities of the pages in Gym App.
+2.0 TEST PLAN
+
+2.1 Items Under Test
+
+The Gym App system will consist of three basic areas of testing.  The first item of testing includes the validating the file transfer methods into the Gym App data store.  The second item assessed is how the information is stored within the system database tables. The third item under test is how the information will be retrieved and displayed to the user based on their initial request.
+
+2.2	Scope
+
+The scope of this document is to test the system by each unit, unit integration, and full system functionality.  However, due to the lack of available project time, this testing will only include unit-testing procedures.
+
+2.3	Resource Material
+
+
+•	Gym App Software Requirements Specification 
+            
+
+•	Gym App Software Design document    
+
+2.5	 Approach
+
+2.5.1	Unit Testing
+
+This process involves the testing of particular system components.  These components are isolated from other portions and tested for their input, output, and module procedures.  
+
+2.5.2	Integration Testing
+
+Integration testing procedures incorporate system components and how they perform together functionally between one another.  System parts are built together forming new interfaces and these are tested to determine 
+
+
+2.5.3	System Testing
+
+This involves the complete integration of all system components and how they perform as a whole unit.   This type of testing validates the entire system as a functional entity.
+
+
+3.0 TEST DESIGN
+
+3.1 Approach
+
+3.1.1 Unit Test 
+
+3.1.1.1 “Login valid user” test case
+Login as specific user and input their password. System should display main screen and executive summary showing Home page.
+
+3.1.1.2   “Login Invalid user” test case
+Login as specific user and input incorrect password. System should display screen with authentication-failed message.
+
+3.1.1.3  “Navigate to all workouts ” test case
+The user click on the show all button from the left navigation and system should display all the workouts with textbox and image on the page.
+
+3.1.1.4  “Navigate Arms workouts” test case
+The user click on the Arms button from the left navigation and system should display only the Arms workouts with textbox and image on the page.
+
+3.1.1.5 “Navigate Abs workouts” test case
+The user click on the Abs button from the left navigation and system should display only the Abs workouts with textbox and image on the page.
+
+3.1.1 .5 “Navigate Chest workouts” test case
+The user click on the Chest button from the left navigation and system should display only the Chest workouts with textbox and image on the page.
+
+3.1.1 .6 “Navigate Shoulders workouts” test case
+The user click on the Arms button from the left navigation and system should display only the Shoulders workouts with textbox and image on the page.
+
+3.1.1 .7 “Navigate Legs workouts” test case
+The user click on the Legs button from the left navigation and system should display only the Legs workouts with textbox and image on the page.
+
+3.1.1 .8 “Navigate Cardio workouts” test case
+The user click on the Cardio button from the left navigation and system should display only the Cardio workouts with textbox and image on the page.
+
+
