@@ -70,21 +70,18 @@ $('.popover-header').click(function() {
    <li><a id = "add" href="workouthub2.html">Add workout</a></li>
 
    <li><a  id="btn">Delete workout</a></li>
-   <li><a id = "log" onclick="logout()">Logout</a></li>
+   <li><a href="index.html">Logout</a></li>
    </div>
    <div class="icon">
     </div>
   </div>
-  <div class="container">
-
-    </div>
 
     <div class="container">
       <div id="myBtnContainer2">
         <p>
           Delete workout
             </p>
-          <input id ="del" type="text" name="" value="" placeholder="Workout Name" required>
+          <input id ="del" type="text"   placeholder="Workout Name" required>
 
           <button id="rem" onclick = "removeData()"> Delete workout </button>
 
@@ -92,17 +89,7 @@ $('.popover-header').click(function() {
       </div>
       <p id="demo"></p>
       <script>
-      function logout() {
-        firebase.auth().signOut().then(function(user) {
-          firebase.auth().onAuthStateChanged(user => {
-           if(user = null) {
-            window.location = 'loginPage.html';
-            }
 
-      }).catch(function(error) {
-        console.log("User still logged")
-      })
-      })};
       //when deleteWorkout button is clicked its contents will be displayed
       document.getElementById("btn").addEventListener("click",function(){
         document.querySelector("#myBtnContainer2").style.display="block";
@@ -130,25 +117,28 @@ $('.popover-header').click(function() {
 let iu = document.getElementById("del").value;
 
 function removeData(){
-  let reff = db.ref("workouts" );
-reff.on("value" ,function(datasnapshot){
 
-let wrks = datasnapshot.val();
 
-let keys=Object.keys(wrks);
-  //console.log(keys);
-  for(let i =0; i<keys.length;i++){
-    let k =keys[i];
-    let workoutName = wrks[k].workoutName;
-    if(iu===workoutName){
-      console.log("we");
-//db.ref("workouts/k").remove();
-  //let userRef = this.database.ref('workouts/' + keys);
-      //userRef.remove();
-    }
-  }});
-  }
+document.querySelector(".container").innerHTML=  "you have deleted"+" "+document.getElementById("del").value;
+}
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    console.log("User logged in")
+  } else {
+    console.log("No user logged in!")
+  };
+});
+function logout() {
+  firebase.auth().signOut().then(function(user) {
+    firebase.auth().onAuthStateChanged(user => {
+     if(user = null) {
+      window.location = 'index.html';
+      }
 
+}).catch(function(error) {
+  console.log("User still logged");
+})
+})};
 
 
   </script>

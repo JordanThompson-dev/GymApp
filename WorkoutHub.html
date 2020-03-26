@@ -37,7 +37,7 @@ $('.popover-header').click(function() {
    <ul>
     <li><a href="home2.html">Home</a></li>
    <li><a href="workout2.html">Workout creator</a></li>
-   <li><a href="loginPage.html">Logout</a></li>
+   <li><a id = "log" href="index.html">Logout</a></li>
    </ul>
    </div>
    <div class="icon">
@@ -48,9 +48,10 @@ $('.popover-header').click(function() {
 
   <workouts>
   <center>
-    <button type="button" name="button" onclick = getData()>list Workouts</button>
+
+    <button type="button" name="button" onclick = getData()> Your list Workouts</button>
     <ol id="list"></ol>
-  <!--<button type="button" name="button" onclick = "gotData()">Workout List</button>-->
+
   </center>
   <h2 class= "warmupbutton2"><a class="warmupbuttontext" href="warmup.html">Warmup</a></h2>
 
@@ -66,7 +67,17 @@ ol li {
 }
 </style>
 <script>
+function logout() {
+  firebase.auth().signOut().then(function(user) {
+    firebase.auth().onAuthStateChanged(user => {
+     if(user = null) {
+      window.location = 'index.html';
+      }
 
+}).catch(function(error) {
+  console.log("User still logged")
+})
+})};
 
   //  web app's Firebase database configuration
   var firebaseConfig = {
@@ -86,7 +97,7 @@ ol li {
   firebase.initializeApp(firebaseConfig);
 
   let database = firebase.database();
-
+//checks if the user is logged in
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log("User logged in")
@@ -105,7 +116,7 @@ function getData(){
       let wrks = datasnapshot.val();
 
 let keys=Object.keys(wrks);
-        //console.log(keys);
+        //getting id and workouts from database;
         for(let i =0; i<keys.length;i++){
           let k =keys[i];
           let workoutName = wrks[k].workoutName;
@@ -122,6 +133,7 @@ li.innerHTML += workoutName +  "    --  " +  "  "+ exercises;}
 
 // when the user try to get list of workouts and if there is no recorded workout in tht database error message will be send
 function errData(error){
+  alert("no workout")
   li.innerHTML = (error.message , error.code);
 }
 </script>
