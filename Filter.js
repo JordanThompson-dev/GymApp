@@ -36,3 +36,6 @@ function w3RemoveClass(element, name) {
 }
 
 // Add active class to the current control button (highlight it)
+module.exports = w3RemoveClass
+ module.exports = filterSelection
+ module.exports = w3AddClass
