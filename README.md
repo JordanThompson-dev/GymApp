@@ -14,3 +14,9 @@
 - [ ] Edit User Profile
 - [ ] SQL  
 - [ ] Home Page
+RUNNING Tests
+ can test  from the command line :
+
+Run the tests by typing:
+
+npm test
