@@ -5,7 +5,7 @@
   "name": "GymApp",
   "description": "System Engineering Team6B",
   "version": "1.0.0",
-  "main": "BMICalculator.js",
+  "main": "index.js",
   "dependencies": {},
   "devDependencies": {
     "jest": "^25.2.0"
