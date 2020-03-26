@@ -551,3 +551,56 @@ text-align: center;
   color:#007bff;
 
 }
+
+.jameslist {
+  padding-left: 8%;
+  padding-top: 2%;
+}
+/* Image 1 */
+.jamesimageone {
+  background:url(./img/bicepcurl.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.jamesimageone:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+}
+
+.jamesimagetwo {
+  background:url(./img/chestpress.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.jamesimagetwo:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+}
+
+.jamesimagethree {
+  background:url(./img/legpress.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.jamesimagethree:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+}
