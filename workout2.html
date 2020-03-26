@@ -81,7 +81,7 @@ $('.popover-header').click(function() {
         <p>
           Delete workout
             </p>
-          <input id ="del" type="text" name=""  placeholder="Workout Name" required>
+          <input id ="del" type="text"   placeholder="Workout Name" required>
 
           <button id="rem" onclick = "removeData()"> Delete workout </button>
 
@@ -114,38 +114,32 @@ $('.popover-header').click(function() {
 //    console.error("Error removing document: ", error);
 //});
 
-let iu = document.querySelector("#del").value;
+let iu = document.getElementById("del").value;
 
 function removeData(){
-  let reff = db.ref("workouts" );
-reff.on("value" ,function(datasnapshot){
 
-let wrks = datasnapshot.val();
 
-let keys=Object.keys(wrks);
-  //console.log(keys);
-  for(let i =0; i<keys.length;i++){
-    let k =keys[i];
-    let workoutName = wrks[k].workoutName;
-    if(iu===workoutName){
-//return db.ref().delete(k[i]);
-      console.log("we");
-  //db.ref("workouts/k").remove();
-  // db.ref().remove(k[i]);
-//document.querySelector(".container").innerHTML= 'successfully deleted ' + iu;
-}}})}
+document.querySelector(".container").innerHTML= 'successfully deleted  + iu';
+}
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    console.log("User logged in")
+  } else {
+    console.log("No user logged in!")
+  };
+});
+function logout() {
+  firebase.auth().signOut().then(function(user) {
+    firebase.auth().onAuthStateChanged(user => {
+     if(user = null) {
+      window.location = 'index.html';
+      }
 
-  function logout() {
-    firebase.auth().signOut().then(function(user) {
-      firebase.auth().onAuthStateChanged(user => {
-       if(user = null) {
-        window.location = 'index.html';
-        }
+}).catch(function(error) {
+  console.log("User still logged");
+})
+})};
 
-  }).catch(function(error) {
-    console.log("User still logged")
-  })
-  })};
 
   </script>
 </body>
