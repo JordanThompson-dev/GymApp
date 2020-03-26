@@ -15,7 +15,7 @@
 - [ ] SQL  
 - [ ] Home Page
 RUNNING Tests
- can test  from the command line :
+ can test  from the command line(make sure you are in the correct directory) :
 
 Run the tests by typing:
 
