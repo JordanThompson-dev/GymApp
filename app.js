@@ -1,3 +1,5 @@
+
+//The connection location of the Firebase for javascript can find the Database
   var firebaseConfig = {
     apiKey: "AIzaSyBEJuxPQk7kgHg6KWNk4OqmiO2ji5XCSaM",
     authDomain: "gymapp-cb244.firebaseapp.com",
@@ -15,10 +17,13 @@
 
   //=========NEW USER=======
 
+  //creating an object to push into the firebase database
   var firebaseUsersCollection = database.ref().child('users');
 
+  //creating the submitUser function (see newUser.html where it is initiated)
   function submitUser() {
 
+    //giving variable names to the user inputs in the newUser form
     var user = {
       firstName: $('#firstNameField').val(),
       lastName: $('#lastNameField').val(),
@@ -29,6 +34,7 @@
       dob: $('#dateOfBirthField').val(),
     };
 
+    //ensureing that the email & password are remembered for loginPage
     firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
     .then(function(user){
       console.log("Successbully created user account with uid:",
@@ -40,6 +46,7 @@
 
     firebaseUsersCollection.push(user);
 
+    //taking the user to the login page upon successful creation of a user account
     firebase.auth().onAuthStateChanged(user => {
     if(user) {
       window.location = 'loginPage.html';
@@ -48,41 +55,22 @@
 
   };
 
-  firebaseUsersCollection.on('value',function(users){
-
-    var allUsersHtml = "";
-
-    users.forEach(function(firebaseUserReference){
-
-    var user = firebaseUserReference.val();
-
-    var individualUserHtml = `<div class='item'>
-                  <p>First Name: `+user.firstName+`</p>
-                  <p>Last Name: `+user.lastName+`</p>
-                  <p>E-mail: `+user.email+`</p>
-                  <p>weight: `+user.weight+`</p>
-                  <p>Height: `+user.Height+`</p>
-                  <p>Date Of Birth: `+user.dob+`</p>
-                </div>`;
-
-    allUsersHtml = allUsersHtml + individualUserHtml;
-  });
-
-    $('#currentUsers').html(allUsersHtml);
-
-  });
-
   //===========LOGIN USER================
 
+  //creating the loginUser function (see loginPage.html where it is initiated)
   function loginUser() {
 
+  //checks that email and pin are inputted by the user
   if( $('#emailField').val() != '' && $('#pinField').val() != ''){
 
+  //creates an object with email and pin user informatin
   var data = {
     email    : $('#emailField').val(),
     password : $('#pinField').val(),
   };
 
+//uses firebase command .signInWithEmailAndPassword to check the user
+//files to find and login the user with corresponding email and password
 var auth = null;
 firebase
   .auth()
