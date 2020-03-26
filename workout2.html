@@ -119,7 +119,7 @@ let iu = document.getElementById("del").value;
 function removeData(){
 
 
-document.querySelector(".container").innerHTML= 'successfully deleted  + iu';
+document.querySelector(".container").innerHTML=  "you have deleted"+" "+document.getElementById("del").value;
 }
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
