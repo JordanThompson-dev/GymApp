@@ -21,3 +21,7 @@ we have used Jest to test our code
 Run the tests by typing:
 
 npm test
+
+Link to Travis:
+
+https://travis-ci.com/github/JordanThompson-dev/GymApp/builds
