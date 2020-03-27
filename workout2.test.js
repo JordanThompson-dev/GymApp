@@ -1,5 +1,5 @@
 const RemoveData = require('./workout2');
-//The testing is throwing because we cannot test firebase database
+//The testing is throwing errors because we cannot test firebase database
  const firebase= require('./workout2');
 test('RemoveData function exists', () => {
   expect(RemoveData).toBeDefined();
@@ -7,9 +7,7 @@ test('RemoveData function exists', () => {
 //Remove function should br defined
 test('should be not  null', () => {
   expect(RemoveData).not.toBeNull();
-});
-test('should be not  null', () => {
-  expect(RemoveData).not.toBeNull();
+
 });
 // toBeFalsy
 test('Should be falsy', () => {

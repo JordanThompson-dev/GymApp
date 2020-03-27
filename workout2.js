@@ -78,5 +78,6 @@ console.log("User still logged");
       document.querySelector(".container").innerHTML=  "you have deleted"+" "+document.getElementById("del").value;
 
     }
+    //export to database
 module.exports = RemoveData;
 module.exports = firebase;
