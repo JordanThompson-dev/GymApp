@@ -2,5 +2,7 @@ language: node_js
 node_js:
   - 11.6.0
 
+cache: npm
+
 script:
-  - Filter.test.js
+  - Filter.test
