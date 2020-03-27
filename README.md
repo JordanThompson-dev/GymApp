@@ -15,6 +15,7 @@
 - [x] SQL  
 - [x] Home Page
 RUNNING Tests
+we have used Jest to test our code
  can test  from the command line(make sure you are in the correct directory) :
 
 Run the tests by typing:
