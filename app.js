@@ -88,3 +88,7 @@ firebase
     console.log("Login Failed!", error);
   })
 }};
+
+module.exports = submitUser;
+module.exports = loginUser;
+

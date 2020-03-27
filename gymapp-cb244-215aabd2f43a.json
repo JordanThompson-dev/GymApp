@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "gymapp-cb244",
+  "private_key_id": "215aabd2f43aa257ed0a992edccd8d65d565bb1e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDQhWs/0PX3gGMX\nP+JN1tSepaAy51bwhnbsQgoYcGUEt4qZSftjBIwzgEnF3efW7T6TQuEpOz8qQI37\nO26mLuIzrCAggfshYVztxNPp/yTseuAqhpH74H/noQSrqYJVBfe2p7wt8ld5dDZo\noOJqQo4R4LkEYnT5Cz+G7a+Y9MZzd8wiwPrswveiGBLdWYPaYxlghn8vvHQxOHsD\nDc/08YuJcZNCBVRhlLiN/ABT/S5FUxIl+ZlBSkRpvly9Hdo0GnVC7nWRjFsC5jaK\nWm7J3Vp0XlQ/bgS36m/c3Y7CENzuifWmQiz/77zxGDH9hFho/+O3i3OWzTwmNJvv\nRUWHqEW1AgMBAAECggEAPPD5Pr3h3PNLQoS7rXcfTbxnHOlqicIqqHLGg4z5oQ7J\nNXKfQzmVhgm0xdzMQI62rpApwQSdOcqDFE0y0eO63VItU4LZc9CCOcVAD8+vKWPh\n9tu8d4oNp5LyC/9u5U1or5vHDgCZGxhhPGPkuBx6a/Qq7oKd4Bku+E6n9sJ261Ct\nEJG5Gbk1Pd6iTPkHv0H4UVuvEfjsjLyxAvG5n5umhoXZqd671HUshgZUKoudA0Hf\n3UCA1mWUmYyl/3bUnSpC4mlux2UhcsqL6+UnfImlYYy8vox/CGO8IUlVoWMVBtQM\nPg/S35Rg/7mFmCv7mCCgwu0fT0PgJXT5qavI3ZpeswKBgQDw0LJlxb0nHbg+nqRW\nrQqyx0zQW9+BNDYF0WBCrr+pTfTSg+JayaeOivTrGNhkFo+K3VzCFEr4zZ2yJr6x\nY6dZ3jalhdShOsjM0LDQYFb1gdUXek6EnWP2K4sNh5Yso+1EuaFloa53h2aujiyk\n/MFIxB488LQpW1RC7QUT/gObowKBgQDdq2xCtPE7V2g2uozGlAEfKUEOGKLqPQIP\nZ92zbcfI9JxTrqyDFzAbQpcaPq6QCyi39AJwUI0V4MVB90FcC4jOOWb3uWLbB6mF\n1z1nq5+QItTbSkTbQKdxDSv/00553hThmcsP4pXeSdRM0fC6WfozesTvpSBfTM2A\nHWka/cEuxwKBgFCF2EFDn34m5+a4cUcyUXN6ROse7Vtss+u6GS/y8s+P659Azj2B\nVG/Lcx3xjtnY2WKbplqXIoKTbnmVjwoNwnXAYhFy8KiA2Yfy+EyVCj7JjRFuqjaZ\n0kUMRlDd149RuRLT523uZEI/mkwf6jm48oB8Y4gJDJUPnttKGfqXY2l1AoGBALh/\nXE0tMvcUKh4bKN6DA2f/OzFTWg2iF5vg9ErKXZWp2o9f/B/j5dtakk96ymoDj7GD\n+5+lu7fw692awSCuTQBwEH6xI1FwUC2g12/5DYa3JvkaGLNwXa0frHZyVofiSvj2\nu2eOTPTF+Fi0CCvihffhABcCFi6byxMN55RajjazAoGARi+0hlSnP0DMHkAbAqtD\nIadJhl9NfdR8xfVhcJYXWQIQZsKF7lpVs6VHWFkGyBm6a8PPTkgKBWx2iK2uBJlx\n80ll8pTlkVP7CIosyEGtTSU7byyj+f35NbEDTLDhPECTFX9eT6069pzgwcq+SFb9\nei64KYFOhXg+pGigOdKzhuc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "gymapp-cb244@appspot.gserviceaccount.com",
+  "client_id": "117377160158458476426",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gymapp-cb244%40appspot.gserviceaccount.com"
+}
