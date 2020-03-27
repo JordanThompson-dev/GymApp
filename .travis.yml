@@ -3,4 +3,4 @@ node_js:
   - 11.6.0
 
 script:
-  - Filter.test
+  - Filter.test.js
