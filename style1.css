@@ -1,4 +1,4 @@
-
+/*Main body sizing*/
 body, html {
   height: 100%;
   margin: 0;
@@ -21,19 +21,20 @@ body, html {
 * {
   box-sizing: border-box;
 }
-
+/*Index heading styling*/
 .indexh1 {
  padding-top: 20%;
  text-align:center;
  color: white;
 }
-
+/*Paragrpah stlying*/
 .indexp {
  padding-top: 1%;
  text-align:center;
  color: white;
 }
 
+/*Login Button*/
 .login {
   padding-top: 5%;
   text-align:center;
@@ -43,6 +44,7 @@ body, html {
   width: 100%;
 }
 
+/*Login Button box*/
 .login a {
   background-color:#4287f5;
   padding:8px;
@@ -53,6 +55,7 @@ body, html {
   height: 20%;
 }
 
+/*Sign up Button*/
 .signup {
   padding-top: 2%;
   text-align:center;
@@ -62,6 +65,7 @@ body, html {
   width: 100%;
 }
 
+/*Sign up Button box*/
 .signup a {
   background-color:#4287f5;
   padding:8px;
