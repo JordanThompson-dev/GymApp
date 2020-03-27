@@ -29,7 +29,7 @@
 
 
 
-
+<!-- adding the database link to the code for this page at this page is for creating workouts -->
  <script>
  var firebaseConfig = {
    apiKey: "AIzaSyBEJuxPQk7kgHg6KWNk4OqmiO2ji5XCSaM",
@@ -66,6 +66,8 @@ $('.popover-header').click(function() {
      <!-- this code displays list of links-->
    <ul>
    <li><a  href="WorkoutHub.html">Workout Hub</a></li>
+   <li><a  href="BMICalculator.html">Check BMI</a></li>
+
 
    <li><a id = "add" href="workouthub2.html">Add workout</a></li>
 
@@ -93,8 +95,7 @@ $('.popover-header').click(function() {
       //when deleteWorkout button is clicked its contents will be displayed
       document.getElementById("btn").addEventListener("click",function(){
         document.querySelector("#myBtnContainer2").style.display="block";
-        //document.querySelector("#myBtnContainer").style.display="none";
-            //document.querySelector("#myBtnContainer3").style.display="none";
+
       });
 //when addWorkout button is clicked html contents of delete  will be hidden
       document.getElementById("add").addEventListener("click",function(){
@@ -102,19 +103,7 @@ $('.popover-header').click(function() {
       });
 
 
-
-
-
-
-
-            const db= firebase.database();
-          //db.collection("exercises").doc("workoutName").delete().then(function() {
-    //console.log("Document successfully deleted!");
-//}).catch(function(error) {
-//    console.error("Error removing document: ", error);
-//});
-
-let iu = document.getElementById("del").value;
+    const db= firebase.database();
 
 function removeData(){
 

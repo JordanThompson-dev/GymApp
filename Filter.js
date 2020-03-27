@@ -11,7 +11,7 @@ function filterSelection(c) {
 }
 
 // Show filtered elements
-function w3AddClass(element, name) {
+function w3AddClass(element, name   ) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");

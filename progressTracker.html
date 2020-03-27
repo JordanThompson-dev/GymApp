@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="Filter.js"></script>
   <title>Progress Tracker</title>
+  <!--The CSS for the page, used because two stylesheets attack each other and break the page -->
   <style>
   .menu-bar ul{
     display: inline-flex;
@@ -104,6 +105,7 @@
 </head>
 
 <body>
+  <!-- Filter Buttons to show the graphs asked for and hide them, filterSelection shows classes which the name in the title -->
   <div class="container">
   <button class="btn active" onclick="filterSelection('graph0')"> Hide</button>
   <button class="btn" onclick="filterSelection('graph1')"> Press Up Graph</button>
@@ -111,11 +113,14 @@
   <button class="btn" onclick="filterSelection('graph3')"> Weight Graph</button>
   </div>
   <div>
+    <!-- adding the database link to the code for this page at this page is for creating workouts -->
+    <!--Filter Div allows the filter selection to hide and show this div when that is interacted with -->
     <div class="filterDiv graph1">
-
+      <!-- Graph Div, comes with the settings to change graph settings and add data -->
       <div class="graph">
         <canvas id="myChart"></canvas>
       </div>
+      <!-- Graph scipt, holds all the information and parameters for creating -->
       <script>
 
       var statsSitUp = [12,23,45];
@@ -258,6 +263,7 @@
   </script>
 
 </div>
+<!-- Container for the form, submitted information send to database-->
   <div class="container">
 
     <div class="jumbotron">
