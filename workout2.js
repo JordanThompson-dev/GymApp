@@ -70,3 +70,13 @@ firebase.auth().onAuthStateChanged(user => {
 console.log("User still logged");
 })
 })};
+
+
+
+      function removeData(){
+
+      document.querySelector(".container").innerHTML=  "you have deleted"+" "+document.getElementById("del").value;
+
+    }
+module.exports = RemoveData;
+module.exports = firebase;
