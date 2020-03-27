@@ -15,6 +15,8 @@
 
     <div class="jumbotron">
 
+      <!-- The two user inputs for logging in. merely takes users email and password (in this case pin) to check to see if they have a user account-->
+
       <h1>Login</h1>
 
       <form id="loginForm">
@@ -29,6 +31,7 @@
           <input type="text" class="form-control" id="pinField">
         </div>
 
+        <!-- Initiates the logintUser() function in app.js -->
         <a class="btn btn-defaul" onclick="loginUser()">Login</a>
       </form>
     </div>
@@ -41,7 +44,9 @@
 <!-- Bootstrap JS -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+<!-- Firebase JS -->
 <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
 
+<!-- reference to app.js which has all the javaScript to link this loginUser form to the firebase database -->
 <script src="app.js"></script>
 </html>

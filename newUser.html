@@ -16,6 +16,8 @@
 
     <div class="jumbotron">
 
+      <!-- This is the newUser form, you can see each thing inputed by the user is kept in an ID (eg, firstNameField) which is what is then used to fill the user in the firebase database -->
+
       <h1>Please Enter User Information</h1>
 
       <form>
@@ -60,16 +62,10 @@
           <input type="text" class="form-control" id="dateOfBirthField">
         </div>
 
+        <!-- Initiates the submitUser() function in app.js -->
         <a class="btn btn-defaul" onclick="submitUser()">Submit New User</a>
       </form>
     </div>
-
-  <!--  <div>
-      <h1>Current Users</h1>
-      <div id="currentUsers">
-      </div>
-    </div>
-  </div> -->
 
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -77,8 +73,10 @@
   <!-- Bootstrap JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+  <!-- Firebase JS -->
   <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
 
+  <!-- reference to app.js which has all the javaScript to link this newUser form to the firebase database -->
   <script src="app.js"></script>
 
 </body>
