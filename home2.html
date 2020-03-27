@@ -14,6 +14,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
  </head>
  <body>
+   <!-- Nav bar div, holds the links to parts of the app on every page besides the home2 and index -->
    <div class="top-nav-bar">
      <div class="search-box">
 
@@ -26,13 +27,14 @@
    <div class="icon">
     </div>
   </div>
-
+<!-- Group of link buttons for the parts of the app-->
   <div class="home-group">
     <button onclick="document.location = 'WorkoutHub.html'" class="workoutbutton">Workout Hub</button>
     <button onclick="document.location = 'Warmup.html'" class="warmupbutton">Warm-up</button>
     <button onclick="document.location = 'progressTracker.html'" class="userinfobutton">User Info</button>
     <button onclick="document.location = 'index.html'" class="logoutbutton">Log out</button>
   </div>
+  <!-- Java script function for logging out, is called by the logout button -->
   <script>
   function logout() {
     firebase.auth().signOut().then(function(user) {
