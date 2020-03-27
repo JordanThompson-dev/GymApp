@@ -1,17 +1,19 @@
-<script>
-var firebaseConfig = {
-  apiKey: "AIzaSyBEJuxPQk7kgHg6KWNk4OqmiO2ji5XCSaM",
-  authDomain: "gymapp-cb244.firebaseapp.com",
-  databaseURL: "https://gymapp-cb244.firebaseio.com",
-  projectId: "gymapp-cb244",
-  storageBucket: "gymapp-cb244.appspot.com",
-  messagingSenderId: "33396281966",
-  appId: "1:33396281966:web:7e477a69afc5c3626d4c7f",
-  measurementId: "G-7WHJHCN3T0"
-};
+//The connection location of the Firebase for javascript can find the Database
+  var firebaseConfig = {
+    apiKey: "AIzaSyBEJuxPQk7kgHg6KWNk4OqmiO2ji5XCSaM",
+    authDomain: "gymapp-cb244.firebaseapp.com",
+    databaseURL: "https://gymapp-cb244.firebaseio.com",
+    projectId: "gymapp-cb244",
+    storageBucket: "gymapp-cb244.appspot.com",
+    messagingSenderId: "33396281966",
+    appId: "1:33396281966:web:7e477a69afc5c3626d4c7f",
+    measurementId: "G-7WHJHCN3T0"
+  };
 
-//Initialise Firebase
-firebase.initializeApp(firebaseConfig);
+  //Initialise Firebase
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.database();
+
 $(function () {
 
  $('.pop-button').popover({
@@ -23,10 +25,6 @@ $('.popover-header').click(function() {
  $('.pop-button').popover('hide');
 });
 
-  </script>
-
-
-  <script>
 
   //when deleteWorkout button is clicked its contents will be displayed
   document.getElementById("btn").addEventListener("click",function(){
@@ -45,7 +43,7 @@ $('.popover-header').click(function() {
 
 
 
-        const db= firebase.database();
+
       //db.collection("exercises").doc("workoutName").delete().then(function() {
 //console.log("Document successfully deleted!");
 //}).catch(function(error) {
@@ -54,11 +52,6 @@ $('.popover-header').click(function() {
 
 let iu = document.getElementById("del").value;
 
-function removeData(){
-
-
-document.querySelector(".container").innerHTML=  "you have deleted"+" "+document.getElementById("del").value;
-}
 firebase.auth().onAuthStateChanged(function(user) {
 if (user) {
 console.log("User logged in")
@@ -77,6 +70,3 @@ firebase.auth().onAuthStateChanged(user => {
 console.log("User still logged");
 })
 })};
-
-
-</script>
