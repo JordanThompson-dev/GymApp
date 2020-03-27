@@ -25,3 +25,5 @@ npm test
 Link to Travis:
 
 https://travis-ci.com/github/JordanThompson-dev/GymApp/builds
+
+It automatically tests our test codes
