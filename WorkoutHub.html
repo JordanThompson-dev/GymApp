@@ -123,6 +123,7 @@ let keys=Object.keys(wrks);
           let workoutName = wrks[k].workoutName;
 let exercises = wrks[k].exercises;
 let li = document.createElement("li");
+//Displays the workouts and exercises in list
 document.getElementById('list').appendChild(li);
 li.innerHTML += workoutName +  "    --  " +  "  "+ exercises;}
 
@@ -132,7 +133,8 @@ li.innerHTML += workoutName +  "    --  " +  "  "+ exercises;}
 
 
 
-// when the user try to get list of workouts and if there is no recorded workout in tht database error message will be send
+// when the user try to get list of workouts and if there is no recorded workout in the database
+//error message will be send
 function errData(error){
   alert("no workout")
   li.innerHTML = (error.message , error.code);

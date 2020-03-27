@@ -25,3 +25,8 @@
   display: none;
 
 }
+input {
+    box-shadow: 1px 1px 3px 1px black;
+    width: 100%;
+    text-align: center;
+}

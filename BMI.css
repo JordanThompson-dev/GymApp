@@ -52,3 +52,31 @@ h4 {
     text-shadow: -2px -2px 5px white;
 
 }
+
+
+#myBtnContainer{
+  display: none;
+}
+  #myBtnContainer2{
+    display: none;
+}
+#myBtnContainer3{
+  display: none;
+}
+.alert{
+  text-aligh: center;
+  padding: 10px;
+  background: #79c879;
+  color: #fff;
+  margin-bottom: 10px;
+  display: none;
+}
+#demo{
+  text-aligh: center;
+  padding: 10px;
+  background: #79c879;
+  color: #fff;
+  margin-bottom: 10px;
+  display: none;
+
+}
