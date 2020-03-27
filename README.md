@@ -20,7 +20,7 @@ we have used Jest to test our code
 
 Run the tests by typing:
 
-npm test
+npm test on the command line
 
 Link to Travis:
 
