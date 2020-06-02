@@ -1,3 +1,119 @@
+/*Main body sizing*/
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("img/indexbackground.jpg");
+
+  /* Full height */
+  height: 100%;
+  width: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+* {
+  box-sizing: border-box;
+}
+/*Index heading styling*/
+.indexh1 {
+ padding-top: 20%;
+ text-align:center;
+ color: white;
+}
+/*Paragrpah stlying*/
+.indexp {
+ padding-top: 1%;
+ text-align:center;
+ color: white;
+}
+
+/*Login Button*/
+.login {
+  padding-top: 5%;
+  text-align:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/*Login Button box*/
+.login a {
+  background-color:#4287f5;
+  padding:8px;
+  margin-top:7px;
+  display:block;
+  color:black;
+  width: 60%;
+  height: 20%;
+}
+
+/*Sign up Button*/
+.signup {
+  padding-top: 2%;
+  text-align:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/*Sign up Button box*/
+.signup a {
+  background-color:#4287f5;
+  padding:8px;
+  margin-top:0px;
+  display:block;
+  color:black;
+  width: 60%;
+  height: 20%;
+}
+
+form {
+  float: right;
+  padding-right: 650%;
+  padding-top: 160%;
+}
+
+.menu {
+  float: right;
+  width:20%;
+  padding-left: 90%;
+  text-align:center;
+}
+.menu a {
+  background-color:#e5e5e5;
+  padding:8px;
+  margin-top:7px;
+  display:block;
+  width:100%;
+  color:black;
+  width: 30px;
+  height: 120px;
+
+}
+.main {
+  float:right;
+  width:60%;
+  padding-left: 14px;
+  padding-right: 70px;
+  font-size: 25px;
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width:100%;
+  }
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -11,7 +127,7 @@ body{
   background-color: #3FA9FF;
   padding: 20px;
   text-align: center;
-  margin: 0px 250px 0px 300px;
+  margin: 0px 250px;
 }
 
 .menu-bar :hover{
@@ -160,16 +276,15 @@ margin-right: 5px;
 }
 .overlay{
   display: block;
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   top: 10%;
   margin-left: 0%;
   width: 70px;
 }
-.product-top .overlay:hover{
-  opacity: 1;
 
-  transition: 0.1s;
+input[type=checkbox] {
+    transform: scale(3.5);
 }
 .overlay .fa{
   cursor: pointer;
@@ -267,8 +382,8 @@ workouts{
 
 
 .btn-group button {
-  background-color: #4CAF50; /* Green background */
-  border: 1px solid green; /* Green border */
+  background-color: #3FA9FF;
+  border: 1px #4EAFD0;
   color: white; /* White text */
   padding: 40px 50px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
@@ -289,7 +404,68 @@ workouts{
 
 /* Add a background color on hover */
 .btn-group button:hover {
-  background-color: #3e8e41;
+  background-color: #3da3f5;
+}
+
+.warmuplist {
+  padding-left: 8%;
+  padding-top: 2%;
+}
+/* Image 1 */
+.imageone {
+  background:url(./img/treadmill.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.imageone:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+}
+
+.imagetwo {
+  background:url(./img/stretches.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.imagetwo:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+}
+
+.imagethree {
+  background:url(./img/pushups.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.imagethree:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+}
+.textone {
+  background-color: transparent;
+  border: transparent;
+  color: black; /* White text */
+  padding: 10.5% 10%;/* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
 }
 
 .footer {
@@ -303,4 +479,132 @@ padding: 15px;
 margin-bottom: -10px;
 margin-top: -10px;
 text-align: center;
+}
+/* Home page button navigation */
+.home-group button {
+  color:#007bff;
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  height: 180px;
+  width: 100%; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+}
+
+.workoutbutton{
+  background:url(./img/workoutbutton.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  font-size: 1.5em
+}
+
+.warmupbutton{
+  background:url(./img/warmupbutton.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  font-size: 1.5em
+}
+
+.warmupbutton2 {
+  background-color: #3FA9FF;
+  color: white;
+  position: center;
+}
+
+.warmupbuttontext {
+  color: white;
+}
+
+.userinfobutton{
+  background:url(./img/userinfobutton.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  font-size: 1.5em
+}
+
+.logoutbutton{
+  background:url(./img/logoutbutton.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  font-size: 1.5em
+}
+
+.home-group button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.home-group button:hover {
+  background-color: black;
+  opacity: 0.5;
+  color:#007bff;
+
+}
+
+.jameslist {
+  padding-left: 8%;
+  padding-top: 2%;
+}
+/* Image 1 */
+.jamesimageone {
+  background:url(./img/bicepcurl.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.jamesimageone:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+}
+
+.jamesimagetwo {
+  background:url(./img/chestpress.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.jamesimagetwo:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+}
+
+.jamesimagethree {
+  background:url(./img/legpress.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white; /* White text */
+  padding: 12.5% 20%; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.jamesimagethree:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: white;
 }

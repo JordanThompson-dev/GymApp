@@ -10,36 +10,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
 
+<!-- SCript for the popover header, works based on clicking it and this function is called-->
 <script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyD7dq4bh88ZTL7-k3z2kj3cXwMlr3XgAC4",
-    authDomain: "gymapp-5fbe5.firebaseapp.com",
-    databaseURL: "https://gymapp-5fbe5.firebaseio.com",
-    projectId: "gymapp-5fbe5",
-    storageBucket: "gymapp-5fbe5.appspot.com",
-    messagingSenderId: "50631981290",
-    appId: "1:50631981290:web:dc3e83f3d883c7e1317f93",
-    measurementId: "G-CLFVBS5DM8"
-  };
-
-  //Initialise Firebase
-  firebase.initializeApp(firebaseConfig);
-    function writeData() {
-      firebase.database().ref("exercise").set({
-        name: document.getElementByClassName("pop-button").value
-      });
-    }
-
-</script>
- </head>
- <script>
  $(function () {
 
   $('.pop-button').popover({
@@ -51,7 +26,9 @@ $('.popover-header').click(function() {
 	$('.pop-button').popover('hide');
 });
 </script>
+</head>
  <body>
+      <!-- Nav bar div, holds the links to parts of the app on every page besides the home2 and index -->
    <div class="top-nav-bar">
      <div class="search-box">
 
@@ -59,305 +36,109 @@ $('.popover-header').click(function() {
    </div>
    <div class="menu-bar">
    <ul>
-   <li><a href="WorkoutList.html">Workouts</a></li>
-   <li><a href="loginPage.html">Log In</a></li>
+    <li><a href="home2.html">Home</a></li>
+   <li><a href="workout2.html">Workout creator</a></li>
+   <li><a id = "log" href="index.html">Logout</a></li>
    </ul>
    </div>
    <div class="icon">
     </div>
   </div>
-  <div class="container">
-    <div id="myBtnContainer">
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection('arms')"> Arms</button>
-  <button class="btn" onclick="filterSelection('abs')"> Abs</button>
-  <button class="btn" onclick="filterSelection('chest')"> Chest</button>
-  <button class="btn" onclick="filterSelection('shoulders')"> Shoulders</button>
-  <button class="btn" onclick="filterSelection('legs')"> Legs</button>
-  <button class="btn" onclick="filterSelection('other')">Cardio</button>
-</div>
-	    <div class="row">
-        <div class="filterDiv chest">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/chestPress.jpg">
-				<div class="overlay">
 
 
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
-        <buttom type="button" class="btn btn-secondary" title="Preview"><i class="fa fa-plus"></i></buttom>
-
-
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Chest Press</h3>
-					<h5>Chest</h5>
-				</div>
-
-			</div>
-    </div>
-      <div class="filterDiv chest">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/pushup.jpg">
-				<div class="overlay">
-
-
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Press Up</h3>
-					<h5>Chest</h5>
-				</div>
-
-			</div>
-    </div>
-    <div class="filterDiv arms">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/BicepCurls.jpg">
-				<div class="overlay">
-
-
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Bicep Curls</h3>
-					<h5>Arms</h5>
-				</div>
-
-			</div>
-    </div>
-    <div class="filterDiv arms">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/pushdown.jpg">
-				<div class="overlay">
-
-
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Push Down</h3>
-					<h5>Arms</h5>
-				</div>
-
-			</div>
-    </div>
-    <div class="filterDiv shoulders">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/shoulderpress.jpg">
-				<div class="overlay">
-
-
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Shoulder Press</h3>
-					<h5>Shoulders</h5>
-				</div>
-
-			</div>
-    </div>
-    <div class="filterDiv shoulders">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/flyLift.jpg">
-				<div class="overlay">
-
-
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Fly Lift</h3>
-					<h5>Shoulders</h5>
-				</div>
-      </div>
-
-			</div>
-      <div class="filterDiv legs">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/LegPress.jpg">
-				<div class="overlay">
-
-
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Leg Press</h3>
-					<h5>Legs</h5>
-				</div>
-
-			</div>
-    </div>
-    <div class="filterDiv legs">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/legPress.jpg">
-				<div class="overlay">
-
-
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Random Move</h3>
-					<h5>Legs</h5>
-				</div>
-      </div>
-
-			</div>
-      <div class="filterDiv abs">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/crunches.jpg">
-				<div class="overlay">
-
-
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Crunches</h3>
-					<h5>Abs</h5>
-				</div>
-      </div>
-
-			</div>
-      <div class="filterDiv abs">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/HipTwist.jpg">
-				<div class="overlay">
-
-
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Hip Rotator</h3>
-					<h5>Abs</h5>
-				</div>
-			</div>
-    </div>
-    <div class="filterDiv other">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/Treadmill.jpg">
-				<div class="overlay">
-
-
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Treadmill</h3>
-					<h5>Cardio </h5>
-				</div>
-			</div>
-    </div>
-      <div class="filterDiv other">
-			<div class="col-md-3">
-				<div class="product-top">
-				<img src="img/workouts/step.jpg">
-				<div class="overlay">
-
-
-				<buttom type="button" class="btn btn-secondary" title="add to workout"><i class="fa fa-plus"></i></buttom>
-				</div>
-				</div>
-
-				<div class="product-bottom text-center">
-
-
-
-
-
-				    <h3>Step machine</h3>
-					<h5>Cardio </h5>
-				</div>
-			</div>
-    </div>
-		</div>
-	</div>
+  <!-- Workout section displays where created workouts are -->
   <workouts>
-  <h1>Workout List</h1>
-  <h2><a href="warmup.html">Warmup</a></h2>
+  <center>
+
+    <button type="button" name="button" onclick = getData()> Your list Workouts</button>
+    <ol id="list"></ol>
+
+  </center>
+  <h2 class= "warmupbutton2"><a class="warmupbuttontext" href="warmup.html">Warmup</a></h2>
+
 </workouts>
+<style>
+ol {
+  background: #3399ff;
+  padding: 20px;
+}
+ol li {
+  background: #cce5ff;
+  margin: 5px;
+}
+</style>
+<script>
+function logout() {
+  firebase.auth().signOut().then(function(user) {
+    firebase.auth().onAuthStateChanged(user => {
+     if(user = null) {
+      window.location = 'index.html';
+      }
+
+}).catch(function(error) {
+  console.log("User still logged")
+})
+})};
+
+  //  web app's Firebase database configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBEJuxPQk7kgHg6KWNk4OqmiO2ji5XCSaM",
+    authDomain: "gymapp-cb244.firebaseapp.com",
+    databaseURL: "https://gymapp-cb244.firebaseio.com",
+    projectId: "gymapp-cb244",
+    storageBucket: "gymapp-cb244.appspot.com",
+    messagingSenderId: "33396281966",
+    appId: "1:33396281966:web:7e477a69afc5c3626d4c7f",
+    measurementId: "G-7WHJHCN3T0"
+  };
+
+
+
+  //Initialise Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  let database = firebase.database();
+//checks if the user is logged in
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      console.log("User logged in")
+    } else {
+      console.log("No user logged in!")
+    };
+  });
+
+  //  web app's Firebase configuration
+  //this function retrieve data from database and  displays the workouts in list, when the user click Workout list button.
+
+function getData(){
+        let reff = database.ref("workouts" );
+      reff.on("value" ,function(datasnapshot){
+
+      let wrks = datasnapshot.val();
+
+let keys=Object.keys(wrks);
+        //getting id and workouts from database;
+        for(let i =0; i<keys.length;i++){
+          let k =keys[i];
+          let workoutName = wrks[k].workoutName;
+let exercises = wrks[k].exercises;
+let li = document.createElement("li");
+//Displays the workouts and exercises in list
+document.getElementById('list').appendChild(li);
+li.innerHTML += workoutName +  "    --  " +  "  "+ exercises;}
+
+
+}, errData);
+}
+
+
+
+// when the user try to get list of workouts and if there is no recorded workout in the database
+//error message will be send
+function errData(error){
+  alert("no workout")
+  li.innerHTML = (error.message , error.code);
+}
+</script>
   </body>
 </html>

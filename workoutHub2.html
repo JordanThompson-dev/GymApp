@@ -1,0 +1,431 @@
+<!doctype html>
+<html>
+ <head>
+   <script src="Filter.js"></script>
+   <title>Workout Hub</title>
+   <link rel="stylesheet" type="text/css" href="style1.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+
+
+<script>
+ $(function () {
+
+  $('.pop-button').popover({
+    trigger: 'focus'
+  });
+});
+
+$('.popover-header').click(function() {
+	$('.pop-button').popover('hide');
+});
+</script>
+</head>
+  <!-- Nav bar div, holds the links to parts of the app on every page besides the home2 and index -->
+ <body>
+   <div class="top-nav-bar">
+     <div class="search-box">
+
+
+   </div>
+   <div class="menu-bar">
+   <ul>
+   <li><a href="workout2.html">Workouts</a></li>
+   <li><a id = "log" href="index.html">Logout</a></li>
+   </ul>
+   </div>
+   <div class="icon">
+    </div>
+  </div>
+  <div class="container">
+    <div id="myBtnContainer">
+      <!--those buttons diplays workouts of Arms,Abs,chest... with their images -->
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('arms')"> Arms</button>
+  <button class="btn" onclick="filterSelection('abs')"> Abs</button>
+  <button class="btn" onclick="filterSelection('chest')"> Chest</button>
+  <button class="btn" onclick="filterSelection('shoulders')"> Shoulders</button>
+  <button class="btn" onclick="filterSelection('legs')"> Legs</button>
+  <button class="btn" onclick="filterSelection('other')">Cardio</button>
+</div>
+  <!-- Div for FilterDiv, called when it's been filtered. Holds overlay HTML which is the selector for building a workout -->
+	    <div class="row">
+        <div class="filterDiv chest">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/chestPress.jpg">
+				<div class="overlay">
+
+
+				<input type="checkbox" class="btn btn-secondary" title="add to workout" value="chestPress-chest" id="cp">
+
+
+				</div>
+				</div>
+  <!-- Nav bar div, holds the links to parts of the app on every page besides the home2 and index -->
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Chest Press</h3>
+					<h5>Chest</h5>
+				</div>
+
+			</div>
+        <!-- Nav bar div, holds the links to parts of the app on every page besides the home2 and index -->
+    </div>
+      <div class="filterDiv chest">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/pushup.jpg">
+				<div class="overlay">
+            <!-- In the filter div, you would have the picture and then an overlay which has the checker for adding and removing from a workout-->
+
+				<input value ="PressUp-chest" type="checkbox" id="pup" class="btn btn-secondary" title="add to workout" class="fa fa-plus">
+				</div>
+				</div>
+          <!-- Nav bar div, holds the links to parts of the app on every page besides the home2 and index -->
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Press Up</h3>
+					<h5>Chest</h5>
+				</div>
+
+			</div>
+    </div>
+      <!-- Nav bar div, holds the links to parts of the app on every page besides the home2 and index -->
+    <div class="filterDiv arms">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/BicepCurls.jpg">
+				<div class="overlay">
+
+
+	<input type ="checkbox" id ="Bc" value="BicepCurls-Arms"   class="btn btn-secondary" title="add to workout" class="fa fa-plus" />
+				</div>
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Bicep Curls</h3>
+					<h5>Arms</h5>
+				</div>
+
+			</div>
+    </div>
+      <!-- Nav bar div, holds the links to parts of the app on every page besides the home2 and index -->
+    <div class="filterDiv arms">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/pushdown.jpg">
+				<div class="overlay">
+
+
+				<input type ="checkbox" id = "pda" value = "pushDown-Arms"  class="btn btn-secondary" title="add to workout" class="fa fa-plus">
+				</div>
+				</div>
+          <!-- Nav bar div, holds the links to parts of the app on every page besides the home2 and index -->
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Push Down</h3>
+					<h5>Arms</h5>
+				</div>
+
+			</div>
+    </div>
+    <div class="filterDiv shoulders">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/shoulderpress.jpg">
+				<div class="overlay">
+
+
+				<input type ="checkbox" id = "sps" value = "SholderPress-Shoulders"  class="btn btn-secondary" title="add to workout" class="fa fa-plus">
+				</div>
+          <!-- Nav bar div, holds the links to parts of the app on every page besides the home2 and index -->
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Shoulder Press</h3>
+					<h5>Shoulders</h5>
+				</div>
+
+			</div>
+    </div>
+    <div class="filterDiv shoulders">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/flyLift.jpg">
+				<div class="overlay">
+
+
+				<input type ="checkbox" id = "fls" value = "FlyLift-shoulders"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
+				</div>
+          <!-- Nav bar div, holds the links to parts of the app on every page besides the home2 and index -->
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Fly Lift</h3>
+					<h5>Shoulders</h5>
+				</div>
+      </div>
+
+			</div>
+      <div class="filterDiv legs">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/LegPress.jpg">
+				<div class="overlay">
+
+
+				<input type ="checkbox" id = "lpl" value = "LegPress-Legs"  class="btn btn-secondary" title="add to workout" class="fa fa-plus">
+				</div>
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Leg Press</h3>
+					<h5>Legs</h5>
+				</div>
+
+			</div>
+    </div>
+    <div class="filterDiv legs">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/legRaises.jpg">
+				<div class="overlay">
+
+
+				<input type ="checkbox" id = "lrl" value = "LegRaises-Legs"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
+				</div>
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Leg Raises</h3>
+					<h5>Legs</h5>
+				</div>
+      </div>
+
+			</div>
+      <div class="filterDiv abs">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/crunches.jpg">
+				<div class="overlay">
+
+
+				<input type ="checkbox" id = "ca" value = "Crunches-Abs"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
+				</div>
+          <!-- Nav bar div, holds the links to parts of the app on every page besides the home2 and index -->
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Crunches</h3>
+					<h5>Abs</h5>
+				</div>
+      </div>
+
+			</div>
+      <div class="filterDiv abs">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/HipTwist.jpg">
+				<div class="overlay">
+
+
+				<input  type="checkbox" id = "hra" value = "HipRotator-Abs"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
+				</div>
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Hip Rotator</h3>
+					<h5>Abs</h5>
+				</div>
+			</div>
+    </div>
+    <div class="filterDiv other">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/Treadmill.jpg">
+				<div class="overlay">
+
+
+				<input  type="checkbox" id = "tc" value = "Treadmill-Cardio"   class="btn btn-secondary" title="add to workout" class="fa fa-plus">
+				</div>
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Treadmill</h3>
+					<h5>Cardio </h5>
+				</div>
+			</div>
+    </div>
+      <div class="filterDiv other">
+			<div class="col-md-3">
+				<div class="product-top">
+				<img src="img/workouts/step.jpg">
+				<div class="overlay">
+
+
+				<input  type="checkbox" id = "smc" value = "StepMachine-Cardio"    class="btn btn-secondary" title="add to workout" class="fa fa-plus">
+				</div>
+				</div>
+
+				<div class="product-bottom text-center">
+
+
+
+
+
+				    <h3>Step machine</h3>
+					<h5>Cardio </h5>
+
+
+				</div>
+
+			</div>
+
+
+
+<div>
+
+</div>
+    </div>
+		</div>
+    <p>
+      Please Give Workout Name:
+    </p>
+    <input type="text" name="" value="" id = "add">
+    <!--this button calls writeData function which adds data to database-->
+    <button type="button" name="button" id= "write" onclick =writeData()>Add Workout</button>
+	</div>
+
+
+
+<script>
+function logout() {
+  firebase.auth().signOut().then(function(user) {
+    firebase.auth().onAuthStateChanged(user => {
+     if(user = null) {
+      window.location = 'index.html';
+      }
+
+}).catch(function(error) {
+  console.log("User still logged")
+})
+})};
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBEJuxPQk7kgHg6KWNk4OqmiO2ji5XCSaM",
+    authDomain: "gymapp-cb244.firebaseapp.com",
+    databaseURL: "https://gymapp-cb244.firebaseio.com",
+    projectId: "gymapp-cb244",
+    storageBucket: "gymapp-cb244.appspot.com",
+    messagingSenderId: "33396281966",
+    appId: "1:33396281966:web:7e477a69afc5c3626d4c7f",
+    measurementId: "G-7WHJHCN3T0"
+  };
+
+  //Initialise Firebase
+  firebase.initializeApp(firebaseConfig);
+  var database = firebase.database();
+
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      console.log("User logged in")
+    } else {
+      console.log("No user logged in!")
+    };
+  });
+
+        //Adding user workouts to database
+
+  let firebaseUsersCollection = database.ref().child('workouts/' );
+// writeData function adds workout name and exercises to database
+  function writeData () {
+
+            let checks=document.getElementsByClassName('btn-secondary');
+            let str ='';
+
+for(let i = 0; i<checks.length; i++)
+{
+  if(checks[i].checked === true){
+    str += checks[i].value + " " ;
+  }
+
+}            let exercise = {
+
+                workoutName: document.getElementById('add').value,
+                  exercises: str,
+
+
+
+};
+
+//push is a method used to add data in firebase database
+                firebaseUsersCollection.push(exercise);
+
+}
+
+
+</script>
+  </body>
+</html>

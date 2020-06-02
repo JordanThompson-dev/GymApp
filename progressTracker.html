@@ -1,0 +1,355 @@
+<!DOCTYPE HTML5>
+<html lang ="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="Filter.js"></script>
+  <title>Progress Tracker</title>
+  <!--The CSS for the page, used because two stylesheets attack each other and break the page -->
+  <style>
+  .menu-bar ul{
+    display: inline-flex;
+    float: left;
+  }
+  .menu-bar ul li{
+    border-right: 2px solid #fff;
+    list-style-type: none;
+    padding: 10px 25px;
+    text-align: center;
+    background-color: #3FA9FF;
+    cursor: pointer;
+  }
+  .menu-bar ul li a{
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+  }
+  .menu-bar :hover{
+    background-color: #3da3f5;
+
+  }
+  .top-nav-bar{
+    background-color: #3FA9FF;
+    height: 57px;
+    top: 0;
+    position: sticky;
+    border-bottom: 3px solid #4EAFD0;
+    z-index: 2;
+  }
+  .graph{
+    margin:auto;
+    max-width: 30em;
+    max-height:30em;
+    min-width: 20em;
+    min-height: 20em;
+    padding-bottom: 2em;
+  }
+  .filterDiv {
+    padding-top: 2em;
+    color: #ffffff;
+    line-height: 100px;
+    display: none; /* Hidden by default */
+}
+.show {
+  display: inline-block;
+  position: relative;
+}
+@media only screen and (max-width: 980px)
+{
+  .top-nav-bar
+  {
+    height: 118px;
+    border-bottom: 1%;
+  }
+  .search-box
+  {
+    width: 100%;
+  }
+  .menu-bar
+  {
+    width: 100%;
+  }
+  .menu-bar ul
+  {
+    margin: 10px 0;
+    width: 100%;
+  }
+  .menu-bar ul li
+  {
+    height: 57px;
+    width: 100%;
+  }
+}
+
+
+
+  </style>
+  <!-- @Media adjusts css accoridng to the size of the screen. .FIlterDiv and .Graph  -->
+
+  <div class="top-nav-bar">
+  <div class="menu-bar">
+  <ul>
+  <li><a href="home2.html">Home</a></li>
+  <li><a href ="index.html">Logout</a></li>
+  <!--<li><a href="loginPage.html">Log In</a></li>-->
+  </ul>
+  </div>
+  <div class="icon">
+   </div>
+ </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+  <!-- Filter Buttons to show the graphs asked for and hide them, filterSelection shows classes which the name in the title -->
+  <div class="container">
+  <button class="btn active" onclick="filterSelection('graph0')"> Hide</button>
+  <button class="btn" onclick="filterSelection('graph1')"> Press Up Graph</button>
+  <button class="btn" onclick="filterSelection('graph2')"> Sit Up Graph</button>
+  <button class="btn" onclick="filterSelection('graph3')"> Weight Graph</button>
+  </div>
+  <div>
+    <!-- adding the database link to the code for this page at this page is for creating workouts -->
+    <!--Filter Div allows the filter selection to hide and show this div when that is interacted with -->
+    <div class="filterDiv graph1">
+      <!-- Graph Div, comes with the settings to change graph settings and add data -->
+      <div class="graph">
+        <canvas id="myChart"></canvas>
+      </div>
+      <!-- Graph scipt, holds all the information and parameters for creating -->
+      <script>
+
+      var statsSitUp = [12,23,45];
+      var statsPressUp= [5,13,25];
+      var statsWeight= [90,85,82];
+
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['1', '2', '3', '4', '5', '6'],
+            datasets: [{
+                label: '# of Press Ups',
+                data: statsPressUp,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+      });
+      </script>
+
+</div>
+</div>
+<div>
+<div class="filterDiv graph2">
+  <!-- adding the database link to the code for this page at this page is for creating workouts -->
+  <!--Filter Div allows the filter selection to hide and show this div when that is interacted with -->
+  <div class="graph">
+    <canvas id="myChart2"></canvas>
+  </div>
+  <script>
+  var ctx = document.getElementById('myChart2').getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['1', '2', '3', '4', '5', '6'],
+        datasets: [{
+            label: '# of Sit Ups',
+            data: statsSitUp,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+  });
+  </script>
+
+</div>
+</div>
+<div>
+<div class="filterDiv graph3">
+  <!-- adding the database link to the code for this page at this page is for creating workouts -->
+  <!--Filter Div allows the filter selection to hide and show this div when that is interacted with -->
+  <div class="graph">
+    <canvas id="myChart3"></canvas>
+  </div>
+  <script>
+  var ctx = document.getElementById('myChart3').getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['1', '2', '3', '4', '5', '6'],
+        datasets: [{
+            label: 'Weight in KG',
+            data: statsWeight,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+  });
+  </script>
+
+</div>
+<!-- Container for the form, submitted information send to database-->
+  <div class="container">
+
+    <div class="jumbotron">
+
+      <h1>Please Enter User Information</h1>
+
+      <form>
+
+      <div class="form-group">
+          <label for="pressUpField">Press up Count: </label>
+          <input type="text" class="form-control" id="pressUpField">
+        </div>
+
+      <div class="form-group">
+          <label for="sitUpField">Sit up Count: </label>
+          <input type="text" class="form-control" id="sitUpField">
+        </div>
+
+
+      <div class="form-group">
+          <label for="weightField">Weight: </label>
+          <input type="text" class="form-control" id="weightField">
+        </div>
+
+        <a class="btn btn-defaul" onclick="submit()">Submit</a>
+      </form>
+    </div>
+
+
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+
+</body>
+
+<script>
+  var firebaseConfig = {
+  apiKey: "AIzaSyBEJuxPQk7kgHg6KWNk4OqmiO2ji5XCSaM",
+  authDomain: "gymapp-cb244.firebaseapp.com",
+  databaseURL: "https://gymapp-cb244.firebaseio.com",
+  projectId: "gymapp-cb244",
+  storageBucket: "gymapp-cb244.appspot.com",
+  messagingSenderId: "33396281966",
+  appId: "1:33396281966:web:7e477a69afc5c3626d4c7f",
+  measurementId: "G-7WHJHCN3T0"
+};
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var database = firebase.database();
+//check user logged in
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      console.log("User logged in")
+    } else {
+      console.log("No user logged in!")
+    };
+  });
+
+  var statsSitUp = [12,23,45];
+  var statsPressUp= [5,13,25];
+  var statsWeight= [90,85,82];
+
+  var progressCollection = database.ref().child('progress');
+
+  function submit() {
+
+    var userProgress = {
+      sitUp: $('#sitUpField').val(),
+      pressUp: $('#pressUpField').val(),
+      weight: $('#weightField').val(),
+    };
+    sitUpValue = document.getElementById('sitUpField').value;
+    statsSitUp.push(sitUpValue);
+    console.log(statsSitUp);
+    return false;
+//update user statistics
+    progressCollection.update(userProgress);
+
+};
+
+</script>

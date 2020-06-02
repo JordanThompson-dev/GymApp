@@ -18,16 +18,17 @@
      <div class="search-box">
 
    </div>
+<!-- Nav bar div, holds the links to parts of the app on every page besides the home2 and workouthub -->
    <div class="menu-bar">
    <ul>
-   <li><a href="#"><i class="" aria-hidden="true"></i>Home</a></li>
-   <li><a href="#">Workout Hub</a></li>
+   <li><a onclick="document.location = 'home2.html'" href="#"><i class="" aria-hidden="true"></i>Home</a></li>
+   <li><a onclick="document.location = 'workouthub.html'" href="#">Workout Hub</a></li>
    </ul>
    </div>
    <div class="icon">
     </div>
   </div>
-
+    <!-- Workout videos -->
 <div>
   <video padding-top ="10px" width="100%" height="310" controls>
   <source src="videos/Warmup.mp4" type="video/mp4">
@@ -35,8 +36,25 @@
   Your browser does not support the video tag.
 </video>
 </div>
+
+<!-- list of exercises (images and text)-->
+
 <h1>Warmup</h1>
-<h3>Cardio 20 minutes</h3>
+
+<div class="warmuplist">
+<button class="imageone"></button>
+<button class="textone">(10 Mins) Running</button>
+</div>
+
+<div class="warmuplist">
+<button class="imagetwo"></button>
+<button class="textone">(5 Mins) Streching</button>
+</div>
+
+<div class="warmuplist">
+<button class="imagethree"></button>
+<button class="textone">(10 Reps) Push Ups</button>
+</div>
 
   </body>
 </html>

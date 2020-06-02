@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+ 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>User Profile</title>
+
+	<!-- Bootstrap CSS -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+
+	<div>
+		<h1>Your Profile</h1>
+		<div id="currentUser">
+		</div>
+	</div>
+
+</body>
+
+<!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+
+<script>
+
+	var firebaseConfig = {
+    apiKey: "AIzaSyBEJuxPQk7kgHg6KWNk4OqmiO2ji5XCSaM",
+  authDomain: "gymapp-cb244.firebaseapp.com",
+  databaseURL: "https://gymapp-cb244.firebaseio.com",
+  projectId: "gymapp-cb244",
+  storageBucket: "gymapp-cb244.appspot.com",
+  messagingSenderId: "33396281966",
+  appId: "1:33396281966:web:7e477a69afc5c3626d4c7f",
+  measurementId: "G-7WHJHCN3T0"
+    };
+
+    //Initialise Firebase
+    firebase.initializeApp(firebaseConfig);
+    var database = firebase.database();
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user != null) {
+        console.log("User logged in")
+      } else {
+        console.log("No user logged in!")
+      };
+
+      var user = firebase.auth().currentUser;
+	  var name, email, dob, email;
+
+		if (user != null) {
+		  name = user.firstName;
+		  email = user.email;
+		  dob = user.dob;
+		  emailVerified = user.email;
+		}
+
+    });
+</script>
+</html>

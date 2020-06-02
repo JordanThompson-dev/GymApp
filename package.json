@@ -1,17 +1,19 @@
 {
-  "name": "GymApp",
-  "version": "1.0.0",
-  "description": "System Engineering Team6B",
-  "main": "srv.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
+  "name": "GymApp",
+  "description": "System Engineering Team6B",
+  "version": "1.0.0",
+  "main": "index.js",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "nodemon": "^2.0.2"
+    "firebase-functions": "^3.5.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0",
+    "jest": "^25.2.0",
+    "mocha": "^7.1.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/UP892527/GymApp.git"
